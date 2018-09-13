@@ -1,0 +1,50 @@
+.show {
+    display: block;
+}
+
+.page-container {
+    margin: auto;
+    max-width: 839px;
+}
+
+.blog-container {
+    margin: auto;
+    max-width: 839px;
+}
+
+header {
+    display: block;
+}
+
+.article-title {
+    font-size: 19px;
+}
+
+.article-content {
+    font-size: large;
+}
+
+.article-author {
+    font-size: 16px;
+}
+
+.article-time {
+    font-size: 15px;
+}
+
+.blog-title {
+    font-weight: 500;
+    font-size: 42px;
+    margin-left: -2.13px;
+    line-height: 1.20;
+    letter-spacing: -.015em;
+    font-style: normal;
+}
+
+.blog-content {
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    font-weight: 400;
+    font-style: normal;
+}

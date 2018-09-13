@@ -1,0 +1,23 @@
+header {
+    display: block;
+}
+
+.article-title {
+    font-size: 18px;
+}
+
+.article-content {
+    font-size: medium;
+}
+
+.article-author {
+    font-size: 15px;
+}
+
+.article-time {
+    font-size: 14px;
+}
+
+blockquote {
+    padding-inline-start: 30px;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Getting Started With Karma Jasmine</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Shubham Tripathi portfolio site">
+    <meta name="keywords" content="Shubham Tripathi, Shubham, Tripathi, angularjs, javascript,
+            oracle, netsuite, developer">
+    <meta name="author" content="Shubham Tripathi">
+    <meta name="reply-to" content="shubhamio.js@gmail.com">
+    <meta name="url" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <link href="assets/style/style.css" rel="stylesheet">
+    <link rel='stylesheet' media='screen and (max-width: 480px)' href='assets/style/480px-style.css' />
+    <link rel='stylesheet' media='screen and (min-width: 481px) and (max-width: 840px)' href='assets/style/840px-style.css' />
+    <link rel='stylesheet' media='screen and (min-width: 841px)' href='assets/style/full-screen-style.css' />
+
+</head>
+
+<body>
+
+    <div id="menu">
+        <i class="material-icons margin-13">
+            menu
+        </i>
+    </div>
+    <side-nav>
+        <ul class="nav__list" id="nav-ul">
+            <li class="user">
+                <span>
+                    <img class="profile-img" src="D:personal/port/assets/img/u1.png">
+                </span>
+                <span class="profile-name">
+                    Shubham Tripathi
+                </span>
+            </li>
+            <li class="nav__item">
+                <a href="#">Articles</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Latest</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Tags</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Profile</a>
+            </li>
+        </ul>
+    </side-nav>
+    <div id="body">
+        <div class="overlay"></div>
+
+        <header>
+            <nav>
+                <ul class="flex flex-end margin-side-18">
+                    <li class="header-nav-item uppercase">
+                        Articles
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        Latest
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        Tags
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        Profile
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="blog-container">
+            <div>
+                <h1 class="blog-title">Getting Started With Karma Jasmine and code coverage</h1>
+            </div>
+            <div class="article-img-div">
+                <img class="article-img" src="/assets/img/10.jpg">
+            </div>
+            <div class="blog-content">
+                <p>
+                    Today, we will learn unit testing in JavaScript usking Karma, Jasmine and do code coverage. We write unit test to make sure
+                    each part of our code is working independently as per expectation.
+                </p>
+                <p>
+                    I'm writing this for the beginner who want to setup the environment and start writing the unit test case.
+                </p>
+                <h4>
+                    Prerequisite
+                </h4>
+                <blockquote>
+                    Must have <a href="https://nodejs.org/" target="_blank">NodeJS</a> and npm installed<br>
+                    Install any editor of you choice<br>
+                </blockquote>
+                <h4>
+                    What we will be using
+                </h4>
+                <blockquote>
+                    Jasmine - JavaScript framework for doing testing<br>
+                    Karma - Task runner which will execute jasmine test cases<br>
+                    Istanbul Code Coverage - Used for code coverage<br>
+                </blockquote>
+                <h4>
+                    Setting up Environment
+                </h4>
+                <p>
+                    First create a new folder for your code and then set up environment.<br> Now, will create package json
+                    file which has all the information about your web app.<br> Execute this command and follow the steps.
+                </p>
+                <div>
+                    <pre>npm start</pre>
+                </div>
+                <p>
+                    First create a new folder for your code and then will install all the dependencies.<br> So, to install
+                    the dependencies will execute this command in command prompt.
+                </p>
+                <div>
+                    <pre>npm install jasmine jasmine-core karma karma-jasmine karma-chrome-launcher karma-coverage </pre>
+                </div>
+                <div class="article-img-div">
+                    <img class="article-img" src="/assets/img/fold_str.PNG" style="max-width: 280px">
+                </div>
+                <p>
+                    All out js code will be in src folder and all test files will be in spec.<br> Now will do karma init
+                    to setup karma and follow the steps.
+                </p>
+                <div>
+                    <pre>npm karma init</pre>
+                </div>
+                <p>This will create you karma.config file and add addition lines for code coverage</p>
+
+                <script src="https://gist.github.com/TripathiShubham/2142a98c9160852543e6256472487a5c.js"></script>
+
+                <p>Now will write our JavaScript file and test file.</p>
+
+                <script src="https://gist.github.com/TripathiShubham/24069abb719ef31b3752414999ed6880.js"></script>
+                <script src="https://gist.github.com/TripathiShubham/923a872ace0a9806d9a92aeaa981edd2.js"></script>
+
+                <p>
+                    Now run this command to start karma and executes test cases.
+                </p>
+                <div>
+                    <pre>karma start</pre>
+                </div>
+                <p>
+                    Now you can add all you source files inside src folder and start writing test cases inside spec folder.
+                    For complete srource code you can reffer to this git repo.<br>
+                    For any doubt or clarification, please comment below, i'm here to help you <i class="em em-slightly_smiling_face"></i>.
+                </p>
+                <div class="comment-section flex">
+                    <div class="flex-1" id="disqus_thread"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+            this.page.url = 'https://jtest.com/bloga';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = 'https://jtest.com/bloga'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://jsb-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+</body>
+<script src="assets/js/function.js"></script>
+
+</html>
