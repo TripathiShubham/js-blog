@@ -22,3 +22,7 @@ side-nav .nav__list {
 blockquote {
     padding-inline-start: 20px;
 }
+
+.img-desc {
+    font-size: small;
+}

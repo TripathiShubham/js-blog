@@ -391,3 +391,9 @@ blockquote {
     padding-inline-start: 40px;
     border-left: 3px solid grey;
 }
+
+.img-desc {
+    text-align: center;
+    font-size: medium;
+    color: grey;
+}

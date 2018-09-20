@@ -98,61 +98,54 @@
                 </blockquote>
                 <p>
                     Browser's are awsome, we are using browsers for surfing the internet from year's.
-                    We just need to enter the url and the its on your door step.
-                    The capabilities of browsers evolved from decades.Browsers now are just now serving html files but much more than that.
-                    And PWA is one of the latest feature of Web.
+                    We just need to enter the url and the its on your door step.The capabilities of
+                    browsers evolved from decades.Browsers now are just not serving html files but
+                    much more than that.And PWA is one of the latest feature of Web.
                 </p>
                 <h4>
-                    Setting up Environment
+                    Why build a Progressive Web App?
                 </h4>
                 <p>
-                    First create a new folder for your code and then set up environment.<br> Now, will create package
-                    json
-                    file which has all the information about your web app.<br> Execute this command and follow the
-                    steps.
+                    PWA is set of best practices to build web apps which feels like native apps on desktop
+                    or mobile.
                 </p>
-                <div>
-                    <pre>npm start</pre>
-                </div>
-                <p>
-                    First create a new folder for your code and then will install all the dependencies.<br> So, to
-                    install
-                    the dependencies will execute this command in command prompt.
-                </p>
-                <div>
-                    <pre>npm install jasmine jasmine-core karma karma-jasmine karma-chrome-launcher karma-coverage </pre>
-                </div>
                 <div class="article-img-div">
-                    <img class="article-img" src="/assets/img/fold_str.PNG" style="max-width: 280px">
+                    <img class="article-img" src="/assets/img/pwa_user_engagement.png">
+                    <div class="img-desc">User engagement on web vs mobile</div>
                 </div>
+                <p></p>
                 <p>
-                    All out js code will be in src folder and all test files will be in spec.<br> Now will do karma
-                    init
-                    to setup karma and follow the steps.
+                    PWA fill's this gap between the mobile app and web app with the following features.
                 </p>
-                <div>
-                    <pre>npm karma init</pre>
-                </div>
-                <p>This will create you karma.config file and add addition lines for code coverage</p>
-
-                <script src="https://gist.github.com/TripathiShubham/2142a98c9160852543e6256472487a5c.js"></script>
-
-                <p>Now will write our JavaScript file and test file.</p>
-
-                <script src="https://gist.github.com/TripathiShubham/24069abb719ef31b3752414999ed6880.js"></script>
-                <script src="https://gist.github.com/TripathiShubham/923a872ace0a9806d9a92aeaa981edd2.js"></script>
-
                 <p>
-                    Now run this command to start karma and executes test cases.
+                    <strong>Reliable</strong> We love to have downasaur but not in our browser screen, PWA works even
+                    offline and provide us seamless experience online or offline.<br>
+                    <strong>Fast</strong> Loads instantly with fluide user experience.<br>
+                    <strong>Engaging</strong> Feel like a natural app on the device, with an immersive user experience
+                    and can even re-engage users with web push notifications.
                 </p>
-                <div>
-                    <pre>karma start</pre>
+                <div class="article-img-div">
+                    <img class="article-img" src="/assets/img/pwa-engaging.png">
+                    <div class="img-desc">PWA with offline, add to home screen and push notification</div>
                 </div>
+                <h4>Components of a PWA</h4>
                 <p>
-                    Now you can add all you source files inside src folder and start writing test cases inside spec
-                    folder.
-                    For complete srource code you can reffer to this git repo.<br>
-                    For any doubt or clarification, please comment below, i'm here to help you <i class="em em-slightly_smiling_face"></i>.
+                    <strong>Implement app shell</strong> which is the basic minimal HTML, CSS, and JavaScript that is
+                    required to power the user interface instantly.<br>
+                    <strong>Use Service Worker </strong> to intercept network request and cache information for the app
+                    which can be used to serve when offline.Here is sample service worker for your refference.
+                    <script src="https://gist.github.com/TripathiShubham/28897d8267438d3e745e6bec30bf3f8a.js"></script>
+                    <strong>Add manifest file </strong> which is a JSON file used by browser to give the developer the ability 
+                    for that app to be added to your home screen and control how your app will appear.
+                    <script src="https://gist.github.com/TripathiShubham/3d7096f63e1d5d2459a13d2af4a41c75.js"></script> 
+                </p>
+                <h4>Next Step</h4>
+                <p>
+                    Please reffer to my git repo for sample apps and code.<br>
+                    Also you can reffer to this <a href="https://codelabs.developers.google.com/codelabs/your-first-pwapp/" target="_blank">
+                    codelabs</a> by Google Developers.<br>
+                    Will be writing part2 of PWA where we will discuss all the steps to create a PWA in details
+                    along with the code and working demo.
                 </p>
                 <div class="comment-section flex">
                     <div class="flex-1" id="disqus_thread"></div>

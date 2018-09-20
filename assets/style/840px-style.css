@@ -21,3 +21,7 @@ header {
 blockquote {
     padding-inline-start: 30px;
 }
+
+.img-desc {
+    font-size: smaller;
+}
