@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Using Chrome Developers Tool</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Shubham Tripathi portfolio site">
+    <meta name="keywords" content="Shubham Tripathi, Shubham, Tripathi, angularjs, javascript,
+            oracle, netsuite, developer">
+    <meta name="author" content="Shubham Tripathi">
+    <meta name="reply-to" content="shubhamio.js@gmail.com">
+    <meta name="url" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <link href="assets/style/style.css" rel="stylesheet">
+    <link rel='stylesheet' media='screen and (max-width: 480px)' href='assets/style/480px-style.css' />
+    <link rel='stylesheet' media='screen and (min-width: 481px) and (max-width: 840px)' href='assets/style/840px-style.css' />
+    <link rel='stylesheet' media='screen and (min-width: 841px)' href='assets/style/full-screen-style.css' />
+
+</head>
+
+<body>
+
+    <div id="menu">
+        <i class="material-icons margin-13">
+            menu
+        </i>
+    </div>
+    <side-nav>
+        <ul class="nav__list" id="nav-ul">
+            <li class="user">
+                <span>
+                    <img class="profile-img" src="D:personal/port/assets/img/u1.png">
+                </span>
+                <span class="profile-name">
+                    Shubham Tripathi
+                </span>
+            </li>
+            <li class="nav__item">
+                <a href="#">Articles</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Latest</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Tags</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Profile</a>
+            </li>
+        </ul>
+    </side-nav>
+    <div id="body">
+        <div class="overlay"></div>
+
+        <header>
+            <nav>
+                <ul class="flex flex-end margin-side-18">
+                    <li class="header-nav-item uppercase">
+                        Articles
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        Latest
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        Tags
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        Profile
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="blog-container">
+            <div>
+                <h1 class="blog-title">Using Chrome Developers Tool</h1>
+            </div>
+            <div class="article-img-div">
+                <img class="article-img" src="/assets/img/pwa-poster.jpeg">
+            </div>
+            <div class="blog-content">
+                <p>
+                    Have you ever seen an “Add to Home Screen” banner, like above, while browsing a website? When you
+                    click the button, the “application” installs itself in the background. When you open this
+                    application that now sits in your app drawer, you can browse the same experience you were doing on
+                    your browser, but now right in your mobile phone.
+                </p>
+                <p>
+                    This, we call as Progressive Web App (PWA).
+                </p>
+                <blockquote>
+                    A Progressive Web App uses modern web capabilities to deliver an app-like user experience.
+                </blockquote>
+                <p>
+                    Browser's are awsome, we are using browsers for surfing the internet from year's.
+                    We just need to enter the url and the its on your door step.The capabilities of
+                    browsers evolved from decades.Browsers now are just not serving html files but
+                    much more than that.And PWA is one of the latest feature of Web.
+                </p>
+                <h4>
+                    Why build a Progressive Web App?
+                </h4>
+                <p>
+                    PWA is set of best practices to build web apps which feels like native apps on desktop
+                    or mobile.
+                </p>
+                <div class="article-img-div">
+                    <img class="article-img" src="/assets/img/pwa_user_engagement.png">
+                    <div class="img-desc">User engagement on web vs mobile</div>
+                </div>
+                <p></p>
+                <p>
+                    PWA fill's this gap between the mobile app and web app with the following features.
+                </p>
+                <p>
+                    <strong>Reliable</strong> We love to have downasaur but not in our browser screen, PWA works even
+                    offline and provide us seamless experience online or offline.<br>
+                    <strong>Fast</strong> Loads instantly with fluide user experience.<br>
+                    <strong>Engaging</strong> Feel like a natural app on the device, with an immersive user experience
+                    and can even re-engage users with web push notifications.
+                </p>
+                <div class="article-img-div">
+                    <img class="article-img" src="/assets/img/pwa-engaging.png">
+                    <div class="img-desc">PWA with offline, add to home screen and push notification</div>
+                </div>
+                <h4>Components of a PWA</h4>
+                <p>
+                    <strong>Implement app shell</strong> which is the basic minimal HTML, CSS, and JavaScript that is
+                    required to power the user interface instantly.<br>
+                    <strong>Use Service Worker </strong> to intercept network request and cache information for the app
+                    which can be used to serve when offline.Here is sample service worker for your refference.
+                    <script src="https://gist.github.com/TripathiShubham/28897d8267438d3e745e6bec30bf3f8a.js"></script>
+                    <strong>Add manifest file </strong> which is a JSON file used by browser to give the developer the ability 
+                    for that app to be added to your home screen and control how your app will appear.
+                    <script src="https://gist.github.com/TripathiShubham/3d7096f63e1d5d2459a13d2af4a41c75.js"></script> 
+                </p>
+                <h4>Next Step</h4>
+                <p>
+                    Please reffer to my git repo for sample apps and code.<br>
+                    Also you can reffer to this <a href="https://codelabs.developers.google.com/codelabs/your-first-pwapp/" target="_blank">
+                    codelabs</a> by Google Developers.<br>
+                    Will be writing part2 of PWA where we will discuss all the steps to create a PWA in details
+                    along with the code and working demo.
+                </p>
+                <div class="comment-section flex">
+                    <div class="flex-1" id="disqus_thread"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+            this.page.url = 'https://jtest.com/bloga';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = 'https://jtest.com/bloga'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://jsb-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+</body>
+<script src="assets/js/function.js"></script>
+
+</html>

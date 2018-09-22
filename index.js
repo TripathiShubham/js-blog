@@ -3,12 +3,16 @@ var app = express();
 
 app.use("/assets", express.static('assets'));
 
-app.get("/blog", function(req, res) {
-    res.sendFile(__dirname + '/blog.html');
+app.get("/karma_jasmine", function(req, res) {
+    res.sendFile(__dirname + '/karma_jasmine.html');
 });
 
 app.get("/pwa", function(req, res) {
-    res.sendFile(__dirname + '/blog1.html');
+    res.sendFile(__dirname + '/pwa.html');
+});
+
+app.get("/cdt", function(req, res) {
+    res.sendFile(__dirname + '/chrome_developer_tool.html');
 });
 
 app.get("*", function(req, res) {
