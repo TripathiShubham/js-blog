@@ -172,6 +172,11 @@ li.nav__item > a {
     transition: filter 1s linear;
 }
 
+.half-image {
+    width: 60%;
+    margin: auto;
+}
+
 .article-img.lazy {
     filter: blur(6px);
 }
@@ -223,6 +228,10 @@ li.nav__item > a {
 
 .latest-article .article-img-div {
     flex: 1;
+}
+
+.flex-center {
+    justify-content: center;
 }
 
 .flex-end {
@@ -396,4 +405,15 @@ blockquote {
     text-align: center;
     font-size: medium;
     color: grey;
+}
+
+.resp-iframe {
+    height: 100%;
+    max-width: 100%;
+}
+
+mark {
+    background-color: rgb(232,234,237);
+    padding: 0px 6px 0px 6px;
+    border-radius: 5px;
 }

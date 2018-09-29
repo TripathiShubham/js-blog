@@ -11,7 +11,7 @@ app.get("/pwa", function(req, res) {
     res.sendFile(__dirname + '/pwa.html');
 });
 
-app.get("/cdt", function(req, res) {
+app.get("/chrome_developer_tool", function(req, res) {
     res.sendFile(__dirname + '/chrome_developer_tool.html');
 });
 

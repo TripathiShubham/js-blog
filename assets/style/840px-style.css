@@ -25,3 +25,7 @@ blockquote {
 .img-desc {
     font-size: smaller;
 }
+
+.half-image {
+    width: 75%
+}

@@ -81,71 +81,94 @@
                 <h1 class="blog-title">Using Chrome Developers Tool</h1>
             </div>
             <div class="article-img-div">
-                <img class="article-img" src="/assets/img/pwa-poster.jpeg">
+                <img class="article-img" src="/assets/img/cdt_cover.PNG">
             </div>
             <div class="blog-content">
                 <p>
-                    Have you ever seen an “Add to Home Screen” banner, like above, while browsing a website? When you
-                    click the button, the “application” installs itself in the background. When you open this
-                    application that now sits in your app drawer, you can browse the same experience you were doing on
-                    your browser, but now right in your mobile phone.
-                </p>
-                <p>
-                    This, we call as Progressive Web App (PWA).
+                    Calling yourself a super web developer and don't know about Chrome Devtool.<i class="em em-sweat_smile"></i><br>
+                    Today, will go through how we can enhance our productivity using chrome devtools.
                 </p>
                 <blockquote>
-                    A Progressive Web App uses modern web capabilities to deliver an app-like user experience.
+                    Chrome DevTools is a set of web developer tools built directly into the Google Chrome browser.
                 </blockquote>
                 <p>
-                    Browser's are awsome, we are using browsers for surfing the internet from year's.
-                    We just need to enter the url and the its on your door step.The capabilities of
-                    browsers evolved from decades.Browsers now are just not serving html files but
-                    much more than that.And PWA is one of the latest feature of Web.
+                    DevTools can help you edit pages on-the-fly and diagnose problems quickly, which ultimately 
+                    helps you build better websites, faster.Here is an example of editing google home page.
                 </p>
+                <div class="flex flex-center">
+                    <iframe class="resp-iframe" src="https://www.youtube.com/embed/G_P6rpRSr4g" frameborder="0" 
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
                 <h4>
-                    Why build a Progressive Web App?
+                    Discover DevTools
                 </h4>
                 <p>
-                    PWA is set of best practices to build web apps which feels like native apps on desktop
-                    or mobile.
+                    To start using dev tool press <mark>F12</mark> or <mark>Ctrl + Shift + i</mark> in you chrome
+                    new tab or web page which you want to inspect.Now you will find a number of tabs there.Will 
+                    explain you some of handy ones here.
                 </p>
-                <div class="article-img-div">
-                    <img class="article-img" src="/assets/img/pwa_user_engagement.png">
-                    <div class="img-desc">User engagement on web vs mobile</div>
+                <div class="container flex-center article-img-div">
+                        <img class="article-img half-image" src="/assets/img/super-dev.jpg">
+                        <div class="img-desc">On a journey to become a super developer</div>
                 </div>
-                <p></p>
                 <p>
-                    PWA fill's this gap between the mobile app and web app with the following features.
+                    <strong>Device mode </strong> Are you building a responsive website and want to test it on different 
+                    devices, go buy them all <i class="em em-anguished"></i>. Not a good idea, you can make use of chrome 
+                    device mode to simulate different device and check responsiveness, just click on <mark>Toogle Device 
+                    Toolbar</mark> option on top left or press <mark>Ctrl + Shift + M</mark><br>
                 </p>
-                <p>
-                    <strong>Reliable</strong> We love to have downasaur but not in our browser screen, PWA works even
-                    offline and provide us seamless experience online or offline.<br>
-                    <strong>Fast</strong> Loads instantly with fluide user experience.<br>
-                    <strong>Engaging</strong> Feel like a natural app on the device, with an immersive user experience
-                    and can even re-engage users with web push notifications.
-                </p>
-                <div class="article-img-div">
-                    <img class="article-img" src="/assets/img/pwa-engaging.png">
-                    <div class="img-desc">PWA with offline, add to home screen and push notification</div>
+                <div class="container flex-center article-img-div">
+                        <img class="article-img half-image" src="/assets/img/responsive.gif ">
+                        <div class="img-desc">Testing Responsiviness of website in device mode</div>
                 </div>
-                <h4>Components of a PWA</h4>
                 <p>
-                    <strong>Implement app shell</strong> which is the basic minimal HTML, CSS, and JavaScript that is
-                    required to power the user interface instantly.<br>
-                    <strong>Use Service Worker </strong> to intercept network request and cache information for the app
-                    which can be used to serve when offline.Here is sample service worker for your refference.
-                    <script src="https://gist.github.com/TripathiShubham/28897d8267438d3e745e6bec30bf3f8a.js"></script>
-                    <strong>Add manifest file </strong> which is a JSON file used by browser to give the developer the ability 
-                    for that app to be added to your home screen and control how your app will appear.
-                    <script src="https://gist.github.com/TripathiShubham/3d7096f63e1d5d2459a13d2af4a41c75.js"></script> 
+                    <strong>Elements</strong> Using this tab you can add or edit html code or make changes in CSS
+                    and can check its reflection right there at the same time.It become very handy for making CSS
+                    changes in a website as all the changes are reflected immediately<br>
+                    <strong>Console</strong> In this tab, you will get all the javascript console logs.And thats not all,
+                    you can execute any javascript code directly here in console and advance features like autocomplete
+                    are also integrated with this console.There is also list of command line API's build in console
+                    for common task details of which you can find 
+                    <a href="https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference"
+                    target="_blank">here</a><br>
                 </p>
-                <h4>Next Step</h4>
+                <div class="container flex-center article-img-div">
+                        <img class="article-img half-image" src="/assets/img/source_tab.PNG">
+                        <div class="img-desc">Debugging javascript using chrome devtool</div>
+                </div>
                 <p>
-                    Please reffer to my git repo for sample apps and code.<br>
-                    Also you can reffer to this <a href="https://codelabs.developers.google.com/codelabs/your-first-pwapp/" target="_blank">
-                    codelabs</a> by Google Developers.<br>
-                    Will be writing part2 of PWA where we will discuss all the steps to create a PWA in details
-                    along with the code and working demo.
+                    <strong>Source</strong> Using this tab, you can debug you javascript source code, view call stack
+                    and all your files.You can even persist you code changes while navigating to different pages using local
+                    over-rides and save your changes to disk<br>
+                    <strong>Network</strong> Web developers generally get confused with network error and is difficult to
+                    debug as they don't know the error is from server side or by missing any param while calling API.To make
+                    it a bit easy, you can use network tab to get the details about you request and response through network
+                    which helps you to find out the source of error.<br>
+                </p>
+                <div class="container flex-center article-img-div">
+                        <img class="article-img half-image" src="/assets/img/network-tab.PNG">
+                        <div class="img-desc">Network details in network tab</div>
+                </div>
+                </p>
+                    <strong>Application</strong> Building a PWA, must learn to use this.You can check you service worker
+                    and manifest file.Apart from that you can also view different storages like local storage, session 
+                    storage, cache or cookies of your website.<br>
+                    <strong>Code Coverage </strong> Using this you can check the code coverage of you javascript or CSS file.
+                    It gives a very detailed representation of each line of your code so that you can refactor you code to make 
+                    it more effiecient and remove unused code/css from your file.
+                </p>
+                <div class="container flex-center article-img-div">
+                        <img class="article-img half-image" src="/assets/img/audit-report.png">
+                </div>
+                <p>
+                    <strong>Audits </strong> This is used to check the performance of your website.It internally uses Lighthouse
+                    which is analyzes web apps and web pages, collecting modern performance metrics and insights on developer 
+                    best practices.
+                </p>
+                <p>
+                    That's not all, there is a lot more to explore in chrome devtool and it keeps on getting evolved
+                    with each new release of chrome which bring awsome new features to help developers increase their
+                    productivity and build awsome apps for billions to use.
                 </p>
                 <div class="comment-section flex">
                     <div class="flex-1" id="disqus_thread"></div>
