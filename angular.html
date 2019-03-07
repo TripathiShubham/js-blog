@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Building app using AngularJS</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Shubham Tripathi portfolio site">
+    <meta name="keywords" content="Shubham Tripathi, Shubham, Tripathi, angularjs, javascript,
+            oracle, netsuite, developer">
+    <meta name="author" content="Shubham Tripathi">
+    <meta name="reply-to" content="shubhamio.js@gmail.com">
+    <meta name="url" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <link href="assets/style/style.css" rel="stylesheet">
+    <link rel='stylesheet' media='screen and (max-width: 480px)' href='assets/style/480px-style.css' />
+    <link rel='stylesheet' media='screen and (min-width: 481px) and (max-width: 840px)' href='assets/style/840px-style.css' />
+    <link rel='stylesheet' media='screen and (min-width: 841px)' href='assets/style/full-screen-style.css' />
+
+</head>
+
+<body>
+
+    <div id="menu">
+        <i class="material-icons margin-13">
+            menu
+        </i>
+    </div>
+    <side-nav>
+        <ul class="nav__list" id="nav-ul">
+            <li class="user">
+                <span>
+                    <img class="profile-img" src="D:personal/port/assets/img/u1.png">
+                </span>
+                <span class="profile-name">
+                    Shubham Tripathi
+                </span>
+            </li>
+            <li class="nav__item">
+                <a href="#">Articles</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Latest</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Tags</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Profile</a>
+            </li>
+        </ul>
+    </side-nav>
+    <div id="body">
+        <div class="overlay"></div>
+
+        <header>
+            <nav>
+                <ul class="flex flex-end margin-side-18">
+                    <li class="header-nav-item uppercase">
+                        Articles
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        Latest
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        Tags
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        Profile
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="blog-container">
+            <div>
+                <h1 class="blog-title">Building app using AngularJS</h1>
+            </div>
+            <div class="article-img-div">
+                <img class="article-img" src="/assets/img/angular_cover.jpg">
+            </div>
+            <div class="blog-content">
+                <p>
+                    AngularJS - Superheroic JavaScript Framework as they say it.Is it really superheroic <i class="em em-thinking_face"></i>
+                    will check it out.
+                </p>
+                <p>
+                    I started my carrier in web development as a AngularJS developer and i was super excited to learn
+                    and implement the superheroic
+                    concepts of angularjs to build a real project.The features of angularjs like two-way binding,
+                    dependency injection and others
+                    are super cool and seems easy to implement to build a scalable and fast web application.
+                </p>
+                <p>
+                    So we will go through some of the concepts of AngularJS to get started to build a web application
+                    in angularjs.
+                </p>
+                <h4>
+                    The concept
+                </h4>
+                <p>
+                    AngularJS is single page application which is build on MVC pattern.
+                </p>
+                <blockquote>
+                    Model View Controller(MVC) is a software design pattern for applications. In this pattern,
+                    different features are broken into components to separate responsibilities. The model contains the
+                    data and logic, the view contains the visual layout and presentation, while the controller connects
+                    the two.
+                </blockquote>
+                <div class="container flex-center article-img-div">
+                    <img class="half-image article-img" src="/assets/img/mvc.png">
+                    <div class="img-desc">MVC implementation in AngularJS</div>
+                </div>
+                <p></p>
+                <p>
+                    <strong>Module</strong> Module is a container which binds different parts of the application
+                    together
+                    so they can interact with each other.It specify how angular application should be bootstraped.<br>
+                    <div class="container flex-center article-img-div">
+                        <img class="article-img half-image" src="/assets/img/angular-module.png">
+                        <div class="img-desc">This is how angular module binds all part of app </div>
+                    </div>
+                    <strong>Controllers</strong> It is used to control and manage a part of your UI.Using controller
+                    you can write business
+                    logic which is used to control behaviour of your application.With each controller $scope is
+                    associated with it which is
+                    available in you template using two way binding concept of angular which is pretty awsome.<br>
+                    <strong>Services/Factory</strong> You can use services to organize and share code across your
+                    app.Each
+                    component dependent on a service gets a reference to the single instance generated by the service
+                    factory.AngularJS offers several useful services (like $http), but for most applications you'll
+                    also want to create your own.To use an AngularJS service, you add it as a dependency for the
+                    component (controller, service, filter or directive) that depends on the service. Generally we
+                    use service for writing business logic, interacting with server(making API calls) and code sharing.<br>
+                    <strong>Directives</strong> directives are markers on a DOM element (such as an attribute, element
+                    name, comment or CSS class) that tell AngularJS's HTML compiler ($compile) to attach a specified
+                    behavior to that DOM element (e.g. via event listeners), or even to transform the DOM element and
+                    its children.AngularJS comes with a set of these directives built-in, like ngBind, ngModel, and
+                    ngClass. Much like you create controllers and services, you can create your own directives for
+                    AngularJS to use.You need to pass Directive Definition Object which provide instruction to compiler
+                    to create a new directive.<br>
+                    <strong>Dependency Injection</strong> Dependency injection is a technique whereby one object (or
+                    static method) supplies the dependencies of another object.AngularJS injector subsystem is in
+                    charge of creating components, resolving their dependencies, and providing them to other components
+                    as requested.It really makes you development very fast and easy.<br>
+                    <strong>Data Binding</strong> Data-binding in AngularJS apps is the automatic synchronization of
+                    data between the model and view components.When the model changes, the view reflects the change,
+                    and vice versa.
+                </p>
+                <div class="container flex-center article-img-div">
+                    <img class="article-img half-image" src="/assets/img/angular_reach.svg">
+                    <div class="img-desc">Angular popularity </div>
+                </div>
+                <p>
+                    So start learning and building your web application in AngularJS as its a super easy and fast JS framework.
+                </p>
+                <h4>Note</h4>
+                <p>
+                    You may want to use newer version of <a target="_blank" href="https://angular.io/">AngularJS</a> which is much more powerfull and by provide developers angular cli,
+                    you can now build you web app much more faster and get a better user experience. 
+                </p>
+                <div class="comment-section flex">
+                    <div class="flex-1" id="disqus_thread"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+            this.page.url = 'https://jtest.com/bloga';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = 'https://jtest.com/bloga'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://jsb-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+</body>
+<script src="assets/js/function.js"></script>
+
+</html>

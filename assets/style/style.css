@@ -15,7 +15,7 @@ html, body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 header {
@@ -46,6 +46,12 @@ side-nav .nav__list {
     display: none;
     z-index: 99;
     top: 0px;
+}
+
+side-nav .user-img {
+    width: 90px;
+    height: 90px;
+    margin-top: 10px;
 }
 
 nav {
@@ -188,6 +194,7 @@ li.nav__item > a {
 
 .main-article .article-img-div {
     margin-bottom: 16px;
+    width: 100%;
 }
 
 .article-title {
@@ -259,6 +266,7 @@ li.header-nav-item {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 100%;
 }
 
 .show {

@@ -15,6 +15,10 @@ app.get("/chrome_developer_tool", function(req, res) {
     res.sendFile(__dirname + '/chrome_developer_tool.html');
 });
 
+app.get("/angular_app", function(req, res) {
+    res.sendFile(__dirname + '/angular.html');
+});
+
 app.get("*", function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
