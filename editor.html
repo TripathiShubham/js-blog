@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <title>Medium editor</title>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/yabwe/medium-editor/460579ef/dist/css/medium-editor.css"></link>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/yabwe/medium-editor/460579ef/dist/css/themes/default.css"></link>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/orthes/medium-editor-insert-plugin/e626c6e0/dist/css/medium-editor-insert-plugin.css"></link>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/orthes/medium-editor-insert-plugin/e626c6e0/dist/css/medium-editor-insert-plugin-frontend.css"></link>
+
+  <script src="https://linkesch.com/medium-editor-insert-plugin/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="https://linkesch.com/medium-editor-insert-plugin/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+  <script src="https://linkesch.com/medium-editor-insert-plugin/bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+  <script src="https://linkesch.com/medium-editor-insert-plugin/bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+  <script src="https://linkesch.com/medium-editor-insert-plugin/bower_components/handlebars/handlebars.runtime.min.js"></script>
+  <script src="https://linkesch.com/medium-editor-insert-plugin/bower_components/jquery-sortable/source/js/jquery-sortable-min.js"></script>
+  <script src="https://linkesch.com/medium-editor-insert-plugin/bower_components/jquery-cycle2/build/jquery.cycle2.min.js"></script>
+  <script src="https://linkesch.com/medium-editor-insert-plugin/bower_components/jquery-cycle2/build/plugin/jquery.cycle2.center.min.js"></script>
+
+  <script src="https://cdn.rawgit.com/yabwe/medium-editor/460579ef/dist/js/medium-editor.js"></script>
+  <script src="https://cdn.rawgit.com/orthes/medium-editor-insert-plugin/e626c6e0/dist/js/medium-editor-insert-plugin.js"></script>
+
+  <style>
+      .editable {
+          margin: 40px;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="editable">
+    This is editable content
+  </div>
+  <button onclick="save()">Save</button>
+  <div class="result"></div>
+  <script>
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        editor = new MediumEditor('.editable');
+        $(function() {
+          $('.editable').mediumInsert({
+            editor: editor
+          });
+        });
+      }
+    };
+    function save() {
+        var allContents = editor.serialize();
+        console.log(allContents);
+        document.getElementsByClassName('result')[0].innerHTML = allContents['element-0'].value;
+    }
+  </script>
+</body>
+
+</html>

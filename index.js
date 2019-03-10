@@ -19,6 +19,10 @@ app.get("/angular_app", function(req, res) {
     res.sendFile(__dirname + '/angular.html');
 });
 
+app.get("/editor", function(req, res) {
+    res.sendFile(__dirname + '/editor.html');
+});
+
 app.get("*", function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
