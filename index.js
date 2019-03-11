@@ -1,11 +1,14 @@
 var express = require("express");
 var app = express();
+mongoose = require('mongoose');
 var content = "";
+var db = require('./server/config/db');
 
 const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({
-    extended: true
+    extended: true,
+    limit: '50mb'
   }));
 
 app.use("/assets", express.static('assets'));
