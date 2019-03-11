@@ -1,5 +1,12 @@
 var express = require("express");
 var app = express();
+var content = "";
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
 
 app.use("/assets", express.static('assets'));
 
@@ -21,6 +28,15 @@ app.get("/angular_app", function(req, res) {
 
 app.get("/editor", function(req, res) {
     res.sendFile(__dirname + '/editor.html');
+});
+
+app.post('/save', function(req, res) {
+    content = req.body.data;
+    res.send({"status": "OK"});
+});
+
+app.get('/get', function(req, res) {
+    res.send({"content": content});
 });
 
 app.get("*", function(req, res) {
