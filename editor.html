@@ -12,7 +12,8 @@
   <link rel="stylesheet"
     href="https://cdn.rawgit.com/orthes/medium-editor-insert-plugin/e626c6e0/dist/css/medium-editor-insert-plugin-frontend.css">
   </link>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </link>
 
   <script src="https://linkesch.com/medium-editor-insert-plugin/bower_components/jquery/dist/jquery.min.js"></script>
   <script
@@ -34,6 +35,16 @@
   <script
     src="https://cdn.rawgit.com/orthes/medium-editor-insert-plugin/e626c6e0/dist/js/medium-editor-insert-plugin.js"></script>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+  <link href="assets/style/style.css" rel="stylesheet">
+  <link rel='stylesheet' media='screen and (max-width: 480px)' href='assets/style/480px-style.css' />
+  <link rel='stylesheet' media='screen and (min-width: 481px) and (max-width: 840px)'
+    href='assets/style/840px-style.css' />
+  <link rel='stylesheet' media='screen and (min-width: 841px)' href='assets/style/full-screen-style.css' />
   <style>
     .editable {
       margin: 40px;
@@ -50,7 +61,18 @@
   <script>
     document.onreadystatechange = () => {
       if (document.readyState === 'complete') {
-        editor = new MediumEditor('.editable');
+        editor = new MediumEditor('.editable', {
+          placeholder: {
+            /* This example includes the default options for placeholder,
+               if nothing is passed this is what it used */
+            text: 'Type your text'
+          },
+          toolbar: {
+            buttons: ['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'h3', 'quote'],
+            diffLeft: 25,
+            diffTop: 10,
+          }
+        });
         $(function () {
           $('.editable').mediumInsert({
             editor: editor
@@ -67,9 +89,9 @@
           "Content-Type": "application/json",
           // "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify({"data": allContents['element-0'].value}),
+        body: JSON.stringify({ "data": allContents['element-0'].value }),
       })
-        .then(response =>  {
+        .then(response => {
           fetch('/get').then(response => {
             return response.json();
           }).then(response => {

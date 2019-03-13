@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 mongoose = require('mongoose');
 var content = "";
-var db = require('./server/config/db');
+//var db = require('./server/config/db');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({limit: '50mb'}));
