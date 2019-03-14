@@ -9,4 +9,4 @@ var Article = new Schema({
     read_time: Number,
     creation_date: {type: Date, default: Date.now},
 });
-mongoose.model('user', Article);
+mongoose.model('article', Article);

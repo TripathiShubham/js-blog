@@ -8,7 +8,7 @@ module.exports = {
         var article = new Article({
             title: req.body.title,
             authorId : req.body.authorId,
-            status: 'Active',
+            status: true,
             content: req.body.content,
             read_time: req.body.rtime,
         });
@@ -23,7 +23,6 @@ module.exports = {
     },
     getArticle: function(req, res) {
         Article.find({title: req.query.title}, function(err, result) {
-            console.log(result);
             res.send(result);
         });
     }

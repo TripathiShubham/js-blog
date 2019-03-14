@@ -63,8 +63,6 @@
       if (document.readyState === 'complete') {
         editor = new MediumEditor('.editable', {
           placeholder: {
-            /* This example includes the default options for placeholder,
-               if nothing is passed this is what it used */
             text: 'Type your text'
           },
           toolbar: {
@@ -78,16 +76,20 @@
             editor: editor
           });
         });
+        // fetch('/api/get/article?title=Test').then(response => {
+        //     return response.json();
+        //   }).then(response => {
+        //     document.getElementsByClassName('result')[0].innerHTML = response[0].content;
+        //   })
       }
     };
     function save() {
       var allContents = editor.serialize();
 
       fetch('/api/save/article', {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        method: "POST", 
         headers: {
           "Content-Type": "application/json",
-          // "Content-Type": "application/x-www-form-urlencoded",
         },
         body: JSON.stringify({
           "title": "Test",
@@ -97,7 +99,7 @@
         }),
       })
         .then(response => {
-          fetch('/get').then(response => {
+          fetch('/api/get/article/:Test').then(response => {
             return response.json();
           }).then(response => {
             document.getElementsByClassName('result')[0].innerHTML = response.content;
