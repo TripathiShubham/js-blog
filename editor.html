@@ -83,13 +83,18 @@
     function save() {
       var allContents = editor.serialize();
 
-      fetch('/save', {
+      fetch('/api/save/article', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
           "Content-Type": "application/json",
           // "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify({ "data": allContents['element-0'].value }),
+        body: JSON.stringify({
+          "title": "Test",
+          "authorId": "1",
+          "content": allContents['element-0'].value,
+          "read_time": "8",
+        }),
       })
         .then(response => {
           fetch('/get').then(response => {

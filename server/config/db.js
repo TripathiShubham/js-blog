@@ -7,9 +7,9 @@ conn.once('open', function() {
   console.log('Connected');
 });
 
-process.on('SIGINT', function() {
+process.on('SIGINT', function() {  
   mongoose.connection.close(function () { 
     console.log('Mongoose default connection disconnected through app termination'); 
-    process.exit(0);
+    process.exit(0); 
   }); 
 });

@@ -1,8 +1,8 @@
 var express = require("express");
 var app = express();
 mongoose = require('mongoose');
-var content = "";
-//var db = require('./server/config/db');
+var db = require('./server/config/db');
+var article = require('./server/routes/article');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({limit: '50mb'}));
@@ -33,14 +33,8 @@ app.get("/editor", function(req, res) {
     res.sendFile(__dirname + '/editor.html');
 });
 
-app.post('/save', function(req, res) {
-    content = req.body.data;
-    res.send({"status": "OK"});
-});
-
-app.get('/get', function(req, res) {
-    res.send({"content": content});
-});
+app.post('/api/save/article', article.addArticle);
+app.get('/api/get/article', article.getArticle);
 
 app.get("*", function(req, res) {
     res.sendFile(__dirname + '/index.html');
