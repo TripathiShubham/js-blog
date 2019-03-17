@@ -425,3 +425,7 @@ mark {
     padding: 0px 6px 0px 6px;
     border-radius: 5px;
 }
+
+[contenteditable=true]:empty:before {
+    content: attr(data-placeholder);
+}
