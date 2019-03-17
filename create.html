@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <title>Medium editor</title>
+<!-- Font Awesome for awesome icons. You can redefine icons used in a plugin configuration -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="bower_components/medium-editor/dist/css/medium-editor.min.css">
+<link rel="stylesheet" href="bower_components/medium-editor/dist/css/themes/default.css">
+<link rel="stylesheet" href="bower_components/medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin.min.css">
+
+<!-- JS -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/medium-editor/dist/js/medium-editor.js"></script>
+<script src="bower_components/handlebars/handlebars.runtime.min.js"></script>
+<script src="bower_components/jquery-sortable/source/js/jquery-sortable-min.js"></script>
+<script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="bower_components/medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="assets/style/style.css" rel="stylesheet">
+  <link rel='stylesheet' media='screen and (max-width: 480px)' href='assets/style/480px-style.css' />
+  <link rel='stylesheet' media='screen and (min-width: 481px) and (max-width: 840px)'
+    href='assets/style/840px-style.css' />
+  <link rel='stylesheet' media='screen and (min-width: 841px)' href='assets/style/full-screen-style.css' />
+</head>
+
+<body>
+  <div contenteditable="true" placeholder="Enter the Title"></div>
+  <div class="editable">
+  </div>
+  <button onclick="save()">Save</button>
+  <div class="result"></div>
+  <script>
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        editor = new MediumEditor('.editable', {
+          placeholder: {
+            text: 'Type your text'
+          },
+          toolbar: {
+            buttons: ['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'h3', 'quote'],
+            diffLeft: 25,
+            diffTop: 10,
+          }
+        });
+        $(function () {
+          $('.editable').mediumInsert({
+            editor: editor
+          });
+        });
+        // fetch('/api/get/article?title=Test').then(response => {
+        //     return response.json();
+        //   }).then(response => {
+        //     document.getElementsByClassName('result')[0].innerHTML = response[0].content;
+        //   })
+      }
+    };
+    function save() {
+      var allContents = editor.serialize();
+      console.log(allContents);
+      document.getElementsByClassName('result')[0].innerHTML = allContents['element-0'].value;
+      /*fetch('/api/save/article', {
+        method: "POST", 
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          "title": "Test",
+          "authorId": "1",
+          "content": allContents['element-0'].value,
+          "read_time": "8",
+        }),
+      })
+        .then(response => {
+          fetch('/api/get/article/:Test').then(response => {
+            return response.json();
+          }).then(response => {
+            document.getElementsByClassName('result')[0].innerHTML = response.content;
+          })
+        });*/
+
+    }
+  </script>
+</body>
+
+</html>
