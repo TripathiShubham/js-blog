@@ -30,6 +30,7 @@
   <link rel='stylesheet' media='screen and (min-width: 481px) and (max-width: 840px)'
     href='assets/style/840px-style.css' />
   <link rel='stylesheet' media='screen and (min-width: 841px)' href='assets/style/full-screen-style.css' />
+  <link rel="stylesheet" href='assets/style/editor.css' />
 </head>
 
 <body>
@@ -119,7 +120,7 @@
     </header>
 
     <div class="blog-container">
-      <div contenteditable="true" data-placeholder="Enter the Title"></div>
+      <div id="editor_title"><h4 contenteditable="true" data-placeholder="Enter the Title"></h4></div>
       <div class="editable">
       </div>
       <button onclick="save()">Save</button>
