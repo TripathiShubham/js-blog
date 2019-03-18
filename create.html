@@ -120,45 +120,58 @@
     </header>
 
     <div class="blog-container">
-      <div id="editor_title"><h4 contenteditable="true" data-placeholder="Enter the Title"></h4></div>
+      <div id="editor_title">
+        <h4 contenteditable="true" data-placeholder="Enter the Title"></h4>
+      </div>
       <div class="editable">
       </div>
       <button onclick="save()">Save</button>
-      <div class="result"></div>
+    </div>
+    <div class="blog-container">
+      <div>
+        <h1 class="blog-title">Future of Web: Progressive Web App</h1>
+      </div>
+      <div class="blog-content"></div>
     </div>
   </div>
 
   <script>
     document.onreadystatechange = () => {
       if (document.readyState === 'complete') {
-        editor = new MediumEditor('.editable', {
-          placeholder: {
-            text: 'Type your text'
-          },
-          toolbar: {
-            buttons: ['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'h3', 'quote'],
-            diffLeft: 25,
-            diffTop: 10,
-          }
-        });
+        editor = new MediumEditor('.editable');
         $(function () {
           $('.editable').mediumInsert({
-            editor: editor
+            editor: editor,
+            enabled: true,
+            placeholder: {
+              text: 'Type your text'
+            },
+            toolbar: {
+              buttons: ['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'h3', 'quote']
+            },
+            addons: {
+              images: {
+                preview: true, captions: true,
+                fileUploadOptions: {
+                  url: '/upload'
+                },
+              }
+            }
           });
         });
-        // fetch('/api/get/article?title=Test').then(response => {
-        //     return response.json();
-        //   }).then(response => {
-        //     document.getElementsByClassName('result')[0].innerHTML = response[0].content;
-        //   })
+        fetch('/api/get/article?title=Test').then(response => {
+          return response.json();
+        }).then(response => {
+          document.getElementsByClassName('blog-content')[0].innerHTML = response[0].content;
+        })
       }
     };
     function save() {
       var allContents = editor.serialize();
       console.log(allContents);
-      document.getElementsByClassName('result')[0].innerHTML = allContents['element-0'].value;
-      /*fetch('/api/save/article', {
-        method: "POST", 
+      document.getElementsByClassName('blog-content')[0].innerHTML = allContents['element-0'].value;
+      fetch('/api/save/article', {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -170,12 +183,8 @@
         }),
       })
         .then(response => {
-          fetch('/api/get/article/:Test').then(response => {
-            return response.json();
-          }).then(response => {
-            document.getElementsByClassName('result')[0].innerHTML = response.content;
-          })
-        });*/
+          alert("Saved");
+        });
 
     }
   </script>
