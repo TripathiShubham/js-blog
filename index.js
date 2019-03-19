@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 mongoose = require('mongoose');
-//var db = require('./server/config/db');
+var db = require('./server/config/db');
 var article = require('./server/routes/article');
 var multer = require('multer');
 
@@ -67,18 +67,6 @@ app.get("/create", function (req, res) {
 
 app.post('/api/save/article', article.addArticle);
 app.get('/api/get/article', article.getArticle);
-
-/*app.post('/upload', function (req, res) {
-    var response = JSON.stringify({
-        "files":
-            [
-                {
-                    "url": "/test/" + req.file.filename
-                }
-            ]
-    })
-    res.send(JSON.parse(response));
-});*/
 
 app.get("*", function (req, res) {
     res.sendFile(__dirname + '/index.html');

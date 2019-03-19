@@ -6,7 +6,8 @@ var Article = new Schema({
     authorId : String,
     status: Boolean,
     content: String,
-    read_time: Number,
+    readTime: Number,
+    viewContent: String,
     creation_date: {type: Date, default: Date.now},
 });
 mongoose.model('article', Article);

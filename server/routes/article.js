@@ -10,7 +10,8 @@ module.exports = {
             authorId : req.body.authorId,
             status: true,
             content: req.body.content,
-            read_time: req.body.rtime,
+            viewContent: req.body.viewContent,
+            readTime: req.body.rtime,
         });
         article.save(function(err, result) {
             if(err) {
