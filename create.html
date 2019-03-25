@@ -168,10 +168,10 @@
       }
     };
     function save() {
-      var allContents = editor.serialize();
+      var allContents = editor.serialize()['element-0'].value;
       console.log(allContents);
       var title = document.querySelector('#editor_title').innerText;
-      var viewContent = '';
+      var viewContent = allContents.match(/(?<=(<p class="">))(\w|\d|\n)+?(?=(<\/p>))/g);
       fetch('/api/save/article', {
         method: "POST",
         headers: {
@@ -180,13 +180,13 @@
         body: JSON.stringify({
           "title": title,
           "authorId": "1",
-          "content": allContents['element-0'].value,
+          "content": allContents,
           "viewContent": viewContent,
           "read_time": "8",
         }),
       })
         .then(response => {
-          document.getElementsByClassName('blog-content')[0].innerHTML = allContents['element-0'].value;
+          document.getElementsByClassName('blog-content')[0].innerHTML = allContents;
         });
 
     }

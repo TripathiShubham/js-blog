@@ -131,7 +131,7 @@
 </body>
 <script id="dsq-count-scr" src="//jsb-1.disqus.com/count.js" async></script>
 <script>
-  fetch('/api/get/article?title=pwa').then(response => {
+  fetch('/api/get/article?title=progressive web app').then(response => {
     return response.json();
   }).then(response => {
     document.getElementsByClassName('blog-content')[0].innerHTML = response[0].content;
