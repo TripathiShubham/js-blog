@@ -23,7 +23,6 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage});
 
 app.post('/upload', upload.single('image'), (req, res) => {
-    console.log(req.file);
     var imgPath = "/test/" + req.file.filename;
     var response = JSON.stringify({
         "files":
@@ -33,7 +32,6 @@ app.post('/upload', upload.single('image'), (req, res) => {
                 }
             ]
     })
-    console.log(response);
     res.send(JSON.parse(response));
 });
 

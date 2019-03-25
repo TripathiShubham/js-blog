@@ -169,8 +169,9 @@
     };
     function save() {
       var allContents = editor.serialize();
+      console.log(allContents);
       var title = document.querySelector('#editor_title').innerText;
-      var viewContent = document.querySelector('.editable > p').innerText;
+      var viewContent = '';
       fetch('/api/save/article', {
         method: "POST",
         headers: {
