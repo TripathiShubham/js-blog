@@ -172,6 +172,10 @@
       console.log(allContents);
       var title = document.querySelector('#editor_title').innerText;
       var viewContent = allContents.match(/(?<=(<p class="">))(\w|\d|\n)+?(?=(<\/p>))/g);
+      allContents = allContents.replace('<a', '<iframe');
+      allContents = allContents.replace('</a', '</iframe');
+      allContents = allContents.replace('data-iframely-url="', 'style="overflow:hidden;" src="');
+      console.log(allContents);
       fetch('/api/save/article', {
         method: "POST",
         headers: {
