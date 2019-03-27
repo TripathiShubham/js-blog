@@ -42,6 +42,7 @@ let view = {
             body: JSON.stringify({
                 "title": title,
                 "authorId": "1",
+                "authorName": "Shubham Tripathi",
                 "content": allContents,
                 "viewContent": viewContent,
                 "readTime": readTime,
