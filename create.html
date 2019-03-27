@@ -11,16 +11,6 @@
   <link rel="stylesheet"
     href="bower_components/medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin.min.css">
 
-  <!-- JS -->
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/medium-editor/dist/js/medium-editor.js"></script>
-  <script src="bower_components/handlebars/handlebars.runtime.min.js"></script>
-  <script src="bower_components/jquery-sortable/source/js/jquery-sortable-min.js"></script>
-  <script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
-  <script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
-  <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
-  <script src="bower_components/medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.min.js"></script>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -125,7 +115,7 @@
       </div>
       <div class="editable">
       </div>
-      <button onclick="save()">Save</button>
+      <button id="saveButton">Save</button>
     </div>
     <div class="blog-container">
       <div>
@@ -134,67 +124,18 @@
       <div class="blog-content"></div>
     </div>
   </div>
-
-  <script>
-    document.onreadystatechange = () => {
-      if (document.readyState === 'complete') {
-        editor = new MediumEditor('.editable');
-        $(function () {
-          $('.editable').mediumInsert({
-            editor: editor,
-            enabled: true,
-            placeholder: {
-              text: 'Type your text'
-            },
-            toolbar: {
-              buttons: ['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'h3', 'quote']
-            },
-            addons: {
-              images: {
-                preview: true, captions: true,
-                fileUploadOptions: {
-                  url: '/upload',
-                  paramName: 'image'
-                },
-              }
-            }
-          });
-        });
-        fetch('/api/get/article?title=Test').then(response => {
-          return response.json();
-        }).then(response => {
-          document.getElementsByClassName('blog-content')[0].innerHTML = response[0].content;
-        })
-      }
-    };
-    function save() {
-      var allContents = editor.serialize()['element-0'].value;
-      console.log(allContents);
-      var title = document.querySelector('#editor_title').innerText;
-      var viewContent = allContents.match(/(?<=(<p class="">))(\w|\d|\n)+?(?=(<\/p>))/g);
-      allContents = allContents.replace('<a', '<iframe');
-      allContents = allContents.replace('</a', '</iframe');
-      allContents = allContents.replace('data-iframely-url="', 'style="overflow:hidden;" src="');
-      console.log(allContents);
-      fetch('/api/save/article', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          "title": title,
-          "authorId": "1",
-          "content": allContents,
-          "viewContent": viewContent,
-          "read_time": "8",
-        }),
-      })
-        .then(response => {
-          document.getElementsByClassName('blog-content')[0].innerHTML = allContents;
-        });
-
-    }
-  </script>
 </body>
+
+  <!-- JS -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/medium-editor/dist/js/medium-editor.js"></script>
+  <script src="bower_components/handlebars/handlebars.runtime.min.js"></script>
+  <script src="bower_components/jquery-sortable/source/js/jquery-sortable-min.js"></script>
+  <script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+  <script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+  <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+  <script src="bower_components/medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.min.js"></script>
+
+  <script src="assets/js/create.js"></script>
 
 </html>
