@@ -4,6 +4,7 @@ var Article = new Schema({
     title: String,
     name : String,
     authorId : String,
+    authorName : String,
     status: Boolean,
     content: String,
     readTime: Number,

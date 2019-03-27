@@ -8,6 +8,7 @@ module.exports = {
         var article = new Article({
             title: req.body.title,
             authorId : req.body.authorId,
+            authorName : req.body.authorName,
             status: true,
             content: req.body.content,
             viewContent: req.body.viewContent,
@@ -27,5 +28,13 @@ module.exports = {
         Article.find({title: req.query.title}, function(err, result) {
             res.send(result);
         });
+    },
+    getAllArticle: function(req, res) {
+        Article.find({})
+        .sort('-creation_date')
+        .limit(5)
+        .exec(function(err, result){
+            res.send(result);
+        })
     }
 }

@@ -65,6 +65,7 @@ app.get("/create", function (req, res) {
 
 app.post('/api/save/article', article.addArticle);
 app.get('/api/get/article', article.getArticle);
+app.get('/api/get/allArticle', article.getAllArticle);
 
 app.get("*", function (req, res) {
     res.sendFile(__dirname + '/index.html');
