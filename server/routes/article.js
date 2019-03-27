@@ -5,14 +5,14 @@ var Article = mongoose.model('article');
 module.exports = {
     // Add Article
     addArticle: function (req, res) {
-        console.log(req.body.viewContent)
         var article = new Article({
             title: req.body.title,
             authorId : req.body.authorId,
             status: true,
             content: req.body.content,
             viewContent: req.body.viewContent,
-            readTime: req.body.rtime,
+            readTime: req.body.readTime,
+            articleImage: req.body.articleImage
         });
         article.save(function(err, result) {
             if(err) {

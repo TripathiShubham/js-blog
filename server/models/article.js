@@ -8,6 +8,7 @@ var Article = new Schema({
     content: String,
     readTime: Number,
     viewContent: String,
+    articleImage: String,
     creation_date: {type: Date, default: Date.now},
 });
 mongoose.model('article', Article);
