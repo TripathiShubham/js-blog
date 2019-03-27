@@ -2,7 +2,7 @@
     content: attr(data-placeholder);
 }
 
-#editor_title > h4 {
+#article_title > h4, #article_time > p {
     outline: none;
 }
 
