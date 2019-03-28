@@ -30,9 +30,9 @@ let view = {
     },
     save: function () {
         let allContents = editor.serialize()['element-0'].value;
-        var title = $('#article_title').innerText;
-        var readTime = $('#article_time').innerText;
-        var viewContent = allContents.match(/(?<=(<p class="">))(\w|\d|\n)+?(?=(<\/p>))/g);
+        var title = $('#article_title')[0].innerText;
+        var readTime = $('#article_time')[0].innerText;
+        var viewContent = allContents.match(/(?<=(<p>))(.*?)(?=(<\/p>))/g);
         var articleImage = $('.medium-insert-images img')[0].src.replace(location.origin, '');
         fetch('/api/save/article', {
             method: "POST",
