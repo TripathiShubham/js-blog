@@ -26,10 +26,23 @@ let view = {
                 }
             }
         });
-        $('#saveButton').on('click', view.save)
+        $('#saveButton').on('click', view.save);
+        $('body').on('dragstart dragover dragenter dragleave drop', function (event) {
+            event.preventDefault();
+            return false;
+        });
     },
     save: function () {
+        let figures = $('.medium-insert-images figure');
+        let images = $('.medium-insert-images img');
+        let caption = $('.medium-insert-images figcaption');
+        for(let i=0; i<figures.length; i++) {
+            figures[i].setAttribute("class", "article-img-div");
+            images[i].setAttribute("class", "article-img");
+            caption[i].setAttribute("class", "img-desc");
+        }
         let allContents = editor.serialize()['element-0'].value;
+        allContents = allContents.replace("<div><br></div>", "");
         var title = $('#article_title')[0].innerText;
         var readTime = $('#article_time')[0].innerText;
         var viewContent = allContents.match(/(?<=(<p>))(.*?)(?=(<\/p>))/g);

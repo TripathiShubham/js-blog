@@ -196,8 +196,8 @@ li.nav__item > a {
     padding-bottom: 15px;
 }
 
-.main-article .article-img-div {
-    margin-bottom: 16px;
+.main-article .article-img-div, .article-img-div {
+    margin: 0px 0px 16px 0px !important;
     width: 100%;
 }
 

@@ -55,8 +55,8 @@ app.get("/angular_app", function (req, res) {
     res.sendFile(__dirname + '/angular.html');
 });
 
-app.get("/editor", function (req, res) {
-    res.sendFile(__dirname + '/editor.html');
+app.get("/article", function (req, res) {
+    res.sendFile(__dirname + '/article.html');
 });
 
 app.get("/create", function (req, res) {
