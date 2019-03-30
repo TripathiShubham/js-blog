@@ -25,7 +25,9 @@ module.exports = {
         });
     },
     getArticle: function(req, res) {
-        Article.find({title: req.query.title}, function(err, result) {
+        console.log(req.query.id);
+        Article.find({_id: req.query.id}, function(err, result) {
+            console.log(err);
             res.send(result);
         });
     },
