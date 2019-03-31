@@ -5,11 +5,13 @@
 .page-container {
     margin: auto;
     max-width: 839px;
+    margin-top: 60px;
 }
 
 .blog-container {
     margin: auto;
     max-width: 839px;
+    margin-top: 60px;
 }
 
 header {
