@@ -26,7 +26,7 @@ let view = {
                 }
             }
         });
-        $('#saveButton').on('click', view.save);
+        $('#post').on('click', view.save);
         $('body').on('dragstart dragover dragenter dragleave drop', function (event) {
             event.preventDefault();
             return false;

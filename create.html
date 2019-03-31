@@ -29,6 +29,9 @@
     <i class="material-icons margin-13">
       menu
     </i>
+    <span style="float:right">
+      <a href="/"><img class="logo" src="assets/img/logo.svg" alt="logo"></a>
+    </span>
   </div>
   <side-nav>
     <!-- <ul class="nav__list" id="nav-ul">
@@ -55,7 +58,7 @@
         </ul> -->
     <div class="nav__list" id="nav-ul">
       <div>
-        <img src="/assets/img/IMG-20151025-WA0009_small.jpg" data-src="/assets/img/IMG-20151025-WA0009.jpg"
+        <img src="/assets/img/IMG-20151025-WA0009.jpg" data-src="/assets/img/IMG-20151025-WA0009.jpg"
           class="user-img lazy">
       </div>
       <div class="user-details">
@@ -92,19 +95,16 @@
   <div id="body">
     <header>
       <nav>
-        <ul class="flex flex-end margin-side-18">
-          <li class="header-nav-item uppercase">
-            Articles
+        <ul class="flex margin-side-18">
+          <li>
+            <a href="/"><img class="logo" src="assets/img/logo.svg" alt="logo"></a>
           </li>
-          <li class="header-nav-item uppercase">
-            Latest
+          <li id="post" class="header-nav-item uppercase margin-left-auto">
+            Post
           </li>
-          <li class="header-nav-item uppercase">
-            Tags
-          </li>
-          <li class="header-nav-item uppercase">
-            Profile
-          </li>
+          <!-- <li class="header-nav-item uppercase">
+            Login
+          </li> -->
         </ul>
       </nav>
     </header>
@@ -118,21 +118,20 @@
       <div id="article_time">
         <p contenteditable="true" data-placeholder="Article read time"></p>
       </div>
-      <button id="saveButton">Save</button>
     </div>
   </div>
 </body>
 
-  <!-- JS -->
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/medium-editor/dist/js/medium-editor.js"></script>
-  <script src="bower_components/handlebars/handlebars.runtime.min.js"></script>
-  <script src="bower_components/jquery-sortable/source/js/jquery-sortable-min.js"></script>
-  <script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
-  <script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
-  <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
-  <script src="bower_components/medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.min.js"></script>
+<!-- JS -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/medium-editor/dist/js/medium-editor.js"></script>
+<script src="bower_components/handlebars/handlebars.runtime.min.js"></script>
+<script src="bower_components/jquery-sortable/source/js/jquery-sortable-min.js"></script>
+<script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="bower_components/medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.min.js"></script>
 
-  <script src="assets/js/create.js"></script>
+<script src="assets/js/create.js"></script>
 
 </html>

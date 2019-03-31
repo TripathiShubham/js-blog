@@ -32,7 +32,7 @@ module.exports = {
     },
     getAllArticle: function(req, res) {
         Article.find({})
-        .sort('-creation_date')
+        //.sort('-creation_date')
         .limit(5)
         .exec(function(err, result){
             res.send(result);

@@ -16,6 +16,7 @@ html, body {
 
 a {
     text-decoration: underline;
+    color: black;
 }
 
 header {
