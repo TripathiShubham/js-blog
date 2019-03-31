@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "bower install;node index.js"
   },
-  "author": "",
+  "author": "Shubham Tripathi",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
