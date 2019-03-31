@@ -22,6 +22,7 @@ header {
     display: none;
     min-height: 50px;
     box-shadow: 0px 2px 14px -6px;
+    margin-bottom: 15px;
 }
 
 .max-width-100 {
@@ -429,4 +430,23 @@ mark {
     background-color: rgb(232,234,237);
     padding: 0px 6px 0px 6px;
     border-radius: 5px;
+}
+
+.medium-insert-images-grid > figure {
+    width: 50%;
+    margin: auto !important;
+}
+
+.margin-left-auto {
+    margin-left: auto
+}
+
+.logo {
+    width: 50px;
+    margin-top: 5px;
+}
+
+li, a, .article-title, .article-img-div {
+    cursor: pointer;
+    text-decoration: none;
 }

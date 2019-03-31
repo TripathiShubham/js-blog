@@ -78,8 +78,7 @@ let view = {
     },
     viewArticle: function(articleId) {
         let article = controller.getArticleByIndex(articleId);
-        window.location.replace(articleUrl + '?id=' + article._id);
-
+        window.location.href = articleUrl + '?id=' + article._id;
     }
 }
 

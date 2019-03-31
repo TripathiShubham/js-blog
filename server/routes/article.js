@@ -25,7 +25,6 @@ module.exports = {
         });
     },
     getArticle: function(req, res) {
-        console.log(req.query.id);
         Article.find({_id: req.query.id}, function(err, result) {
             console.log(err);
             res.send(result);
