@@ -50,7 +50,7 @@
       didScroll = true;
     });
     setInterval(function () {
-      if (didScroll && spinner) {
+      if (didScroll && !spinner) {
         hasScrolled();
         didScroll = false;
       }
