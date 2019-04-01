@@ -14,7 +14,8 @@ let view = {
                 return response.json();
             }).then((response) => {
                 articleTitle.innerHTML = document.title = response[0].title;
-                articleContent.innerHTML = response[0].content
+                articleContent.innerHTML = response[0].content;
+                hideSpinner();
             });
     },
     setDisqus: function (id) {

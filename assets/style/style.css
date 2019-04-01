@@ -51,6 +51,7 @@ header {
 }
 
 .hide {
+    display: none;
     animation: hide 1s linear;
     animation-fill-mode: forwards;
 }
