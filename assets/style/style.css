@@ -51,21 +51,20 @@ header {
 }
 
 .hide {
-    display: none;
     animation: hide 1s linear;
     animation-fill-mode: forwards;
 }
 
 @keyframes hide {
     0% {
-        display: block;
+        visibility: visible;
         opacity: 1;
     }
     99% {
-        display: block;
+        visibility: visible;
     }
     100% {
-        display: none;
+        visibility: hidden;
         opacity: 0;
     }
 }
