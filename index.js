@@ -55,6 +55,6 @@ app.get("*", function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(4200, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log("server started");
 });
