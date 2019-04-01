@@ -37,6 +37,7 @@ let view = {
             mainAuthor.innerHTML = response[0].authorName;
             mainTime.innerHTML = response[0].readTime + " min read";
             this.createArticles(response);
+            hideSpinner();
         });
     },
     createArticles: function(articlesList) {

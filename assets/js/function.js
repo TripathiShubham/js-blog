@@ -50,7 +50,7 @@
       didScroll = true;
     });
     setInterval(function () {
-      if (didScroll) {
+      if (didScroll && spinner) {
         hasScrolled();
         didScroll = false;
       }
@@ -94,3 +94,16 @@
     }
   }
 })()
+
+const overlay = $(".overlay");
+spinner = true;
+
+function showSpinner() {
+  overlay.removeClass("hide");
+  spinner = true;
+}
+
+function hideSpinner() {
+  overlay.addClass("hide");
+  spinner = false;
+}
