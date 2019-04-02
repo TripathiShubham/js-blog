@@ -90,6 +90,7 @@ side-nav .user-img {
     width: 90px;
     height: 90px;
     margin-top: 10px;
+    display: none;
 }
 
 nav {
@@ -172,6 +173,7 @@ ul {
 
 li.nav__item {
     padding: 16px;
+    box-shadow: 0px 1px 1px 0px #d2d2d24d;
 }
 
 li.nav__item > a {
@@ -327,7 +329,7 @@ li.header-nav-item {
 }
 
 .user-details {
-    margin: 16px;
+    margin: 0px;
     text-align: center;
 }
 
@@ -492,4 +494,30 @@ li, a, .article-title, .article-img-div {
 
 .nav-up {
     top: -50px !important;
+}
+
+.profile_img {
+    border-radius: 50%;
+    width: 35px;
+    margin-top: 5px;
+}
+
+.profileBtn {
+    display: none;
+}
+
+.logoutBtn {
+    display: none;
+}
+
+.user_menu {
+    display: none;
+    z-index: 99;
+    position: absolute;
+    width: 196px;
+    right: 10px;
+    top: 54px;
+    border-color: #eee;
+    background: #fff;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
 }

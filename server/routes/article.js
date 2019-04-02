@@ -26,7 +26,6 @@ module.exports = {
     },
     getArticle: function(req, res) {
         Article.find({_id: req.query.id}, function(err, result) {
-            console.log(err);
             res.send(result);
         });
     },
