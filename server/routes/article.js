@@ -7,9 +7,9 @@ module.exports = {
     addArticle: function (req, res) {
         var article = new Article({
             title: req.body.title,
-            authorId : req.body.authorId,
-            authorName : req.body.authorName,
-            status: true,
+            authorId : req.session.user.profile._id,
+            authorName : req.session.user.profile.firstName,
+            status: false,
             content: req.body.content,
             viewContent: req.body.viewContent,
             readTime: req.body.readTime,
@@ -30,7 +30,7 @@ module.exports = {
         });
     },
     getAllArticle: function(req, res) {
-        Article.find({})
+        Article.find({ articleImage: { $ne: null } })
         //.sort('-creation_date')
         .limit(5)
         .exec(function(err, result){
