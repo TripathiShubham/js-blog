@@ -4,7 +4,9 @@ const mainContent = $(".main-article .article-content")[0];
 const mainAuthor = $(".main-article .article-author")[0];
 const mainTime = $(".main-article .article-time")[0];
 const latestArticle = $(".latest-article")[0];
+const authorImg = $(".user-img");
 const articleUrl = location.origin + "/article";
+const authorImgUrl = "/assets/img/IMG-20151025-WA0009.jpg"
 
 let model = {
     articles: null,
@@ -39,6 +41,7 @@ let view = {
             this.createArticles(response);
             hideSpinner();
         });
+        authorImg[1].setAttribute("src", "/assets/img/IMG-20151025-WA0009.jpg")
     },
     createArticles: function(articlesList) {
         var doc = document.createDocumentFragment();
