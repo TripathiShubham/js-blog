@@ -31,22 +31,34 @@ let view = {
             event.preventDefault();
             return false;
         });
+        hideSpinner();
     },
     save: function () {
         let figures = $('.medium-insert-images figure');
         let images = $('.medium-insert-images img');
         let caption = $('.medium-insert-images figcaption');
-        for(let i=0; i<figures.length; i++) {
+        for (let i = 0; i < figures.length; i++) {
             figures[i].setAttribute("class", "article-img-div");
             images[i].setAttribute("class", "article-img");
-            caption[i].setAttribute("class", "img-desc");
+            if(caption[i]) {
+                caption[i].setAttribute("class", "img-desc");
+            }
+            
         }
         let allContents = editor.serialize()['element-0'].value;
         allContents = allContents.replace("<div><br></div>", "");
-        var title = $('#article_title')[0].innerText;
-        var readTime = $('#article_time')[0].innerText;
-        var viewContent = allContents.match(/(?<=(<p>))(.*?)(?=(<\/p>))/g);
-        var articleImage = $('.medium-insert-images img')[0].src.replace(location.origin, '');
+        let title = $('#article_title')[0].innerText;
+        let readTime = $('#article_time')[0].innerText;
+        let error = view.validateFields(allContents, title, readTime);
+        if(error) {
+            return;
+        }
+        let viewContent = allContents.match(/(?<=(<p>))(.*?)(?=(<\/p>))/g);
+        let artImg = $('.medium-insert-images img')[0];
+        if(artImg && artImg.src) {
+            var articleImage = $('.medium-insert-images img')[0].src.replace(location.origin, '');
+        }
+        showSpinner();
         fetch('/api/save/article', {
             method: "POST",
             headers: {
@@ -54,17 +66,30 @@ let view = {
             },
             body: JSON.stringify({
                 "title": title,
-                "authorId": "1",
-                "authorName": "Shubham Tripathi",
                 "content": allContents,
                 "viewContent": viewContent,
                 "readTime": readTime,
                 "articleImage": articleImage
             }),
-        }).then( () => {
-                alert("article saved successfully");
-                document.getElementsByClassName('blog-content')[0].innerHTML = allContents;
-            });
+        }).then(() => {
+            window.location.href = location.origin;
+        });
+    },
+    validateFields: function(allContents, title, readTime) {
+        let error = false;
+        if(allContents == "") {
+            error = true;
+            $(".content-error").addClass('show');
+        }
+        if(title == "") {
+            error = true;
+            $(".title-error").addClass('show');
+        }
+        if(readTime == "" || isNaN(readTime)) {
+            error = true;
+            $(".time-error").addClass('show');
+        }
+        return error;
     }
 }
 

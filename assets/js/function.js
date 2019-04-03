@@ -7,10 +7,11 @@ const overlay = $(".overlay");
 const loginBtn = $(".loginBtn");
 const profileBtn = $(".profileBtn");
 const profileImg = $(".profile_img");
-const profileImgM = $(".user-img");
+const profileImgM = $("side-nav .user-img");
 const userDetailsDiv = $(".user-details");
 const userName = $(".user-name");
 const logoutBtn = $(".logoutBtn");
+const sideNavOverlay = $('.side-nav-open');
 
 spinner = true;
 
@@ -19,6 +20,7 @@ function showSideNav() {
   document.getElementById("nav-ul").style.transform = 'translateX(0px)';
   document.getElementsByClassName("overlay")[0].classList.add("opened");
   document.getElementById("body").style.overflowY = 'hidden';
+  sideNavOverlay.css("display", "block");
 }
 
 function hideSideNav() {
@@ -27,6 +29,7 @@ function hideSideNav() {
     isOpen = false;
     document.getElementsByClassName("overlay")[0].classList.remove("opened");
     document.getElementById("body").style.overflowY = 'unset';
+    sideNavOverlay.css("display", "none");
   }
 }
 
