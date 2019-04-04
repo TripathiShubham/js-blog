@@ -67,7 +67,6 @@ let view = {
             let starSpan = $('<span><i class="material-icons">star_border</i></span>')[0];
             let articleImgDiv = $('<div class="article-img-div" onclick="view.viewArticle('+i+')"></div>')[0];
             let articleImg = $('<img class="article-img lazy">')[0];
-            let imgSrc = articlesList[i].articleImage;
             articleImg.setAttribute('data-src', articlesList[i].articleImage.replace('_small',''));
             articleImg.setAttribute('src', articlesList[i].articleImage);
             flex1.appendChild(starSpan);
