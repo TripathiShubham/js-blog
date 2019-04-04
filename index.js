@@ -7,6 +7,7 @@ var article = require('./server/routes/article');
 var user = require('./server/routes/user');
 var multer = require('multer');
 var passport = require('passport');
+var jimp = require('jimp');
 var auth = require('./server/config/auth');
 
 const bodyParser = require('body-parser');
@@ -34,6 +35,9 @@ var upload = multer({ storage: storage });
 
 app.post('/upload', upload.single('image'), (req, res) => {
     var imgPath = "/test/" + req.file.filename;
+    var fullFileName = req.file.filename;
+    var fileName = fullFileName.substr(0, fullFileName.indexOf('.'));
+    var fileExtension = fullFileName.substr(fullFileName.indexOf('.') + 1)
     var response = JSON.stringify({
         "files":
             [
@@ -42,6 +46,18 @@ app.post('/upload', upload.single('image'), (req, res) => {
                 }
             ]
     })
+
+    jimp.read(__dirname + imgPath)
+    .then(img => {
+      return img
+        .resize(256, 144)
+        .quality(30)
+        .write('test/' + fileName + "_small." + fileExtension);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+
     res.send(JSON.parse(response));
 });
 

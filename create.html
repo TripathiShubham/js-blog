@@ -65,10 +65,10 @@
       <nav>
         <ul class="flex margin-side-18">
           <li>
-            <img class="logo" src="assets/img/logo.svg" alt="logo" href="/">
+            <a href="/"><img class="logo" src="assets/img/logo.svg" alt="logo" href="/"></a>
           </li>
           <li class="header-nav-item uppercase margin-left-auto">
-            Articles
+            <a href="/">Articles</a>
           </li>
           <li class="header-nav-item uppercase loginBtn">
             <a href="/auth/login">Login</a>
@@ -99,6 +99,7 @@
         <p contenteditable="true" data-placeholder="Article read time"></p>
       </div>
       <span class="time-error error">Time is required and should be a numeric value</span>
+      <input type="checkbox" name="status" class="status"> Publish this article<br>
       <button id="post" class="uppercase">Post</button>
     </div>
   </div>

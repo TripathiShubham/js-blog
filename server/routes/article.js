@@ -5,11 +5,15 @@ var Article = mongoose.model('article');
 module.exports = {
     // Add Article
     addArticle: function (req, res) {
+        if(req.session.user == undefined) {
+            res.redirect('/');
+            return;
+        }
         var article = new Article({
             title: req.body.title,
             authorId : req.session.user.profile._id,
             authorName : req.session.user.profile.firstName,
-            status: false,
+            status: req.body.status,
             content: req.body.content,
             viewContent: req.body.viewContent,
             readTime: req.body.readTime,
