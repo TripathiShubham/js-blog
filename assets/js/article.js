@@ -16,6 +16,7 @@ let view = {
                 articleTitle.innerHTML = document.title = response[0].title;
                 articleContent.innerHTML = response[0].content;
                 hideSpinner();
+                view.setIntersectionObserver();
             });
     },
     setDisqus: function (id) {
@@ -29,6 +30,30 @@ let view = {
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
+    },
+    setIntersectionObserver: function() {
+        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    
+        if ("IntersectionObserver" in window) {
+          let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                let lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImageObserver.unobserve(lazyImage);
+                lazyImage.onload = function () {
+                  lazyImage.classList.remove("lazy");
+                }
+              }
+            });
+          });
+    
+          lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+          });
+        } else {
+          // Possibly fall back to a more compatible method here
+        }
     }
 }
 

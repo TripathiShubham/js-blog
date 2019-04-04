@@ -34,17 +34,6 @@ let view = {
         hideSpinner();
     },
     save: function () {
-        let figures = $('.medium-insert-images figure');
-        let images = $('.medium-insert-images img');
-        let caption = $('.medium-insert-images figcaption');
-        for (let i = 0; i < figures.length; i++) {
-            figures[i].setAttribute("class", "article-img-div");
-            images[i].setAttribute("class", "article-img");
-            if(caption[i]) {
-                caption[i].setAttribute("class", "img-desc");
-            }
-            
-        }
         let allContents = editor.serialize()['element-0'].value;
         allContents = allContents.replace("<div><br></div>", "");
         let title = $('#article_title')[0].innerText;
@@ -53,10 +42,26 @@ let view = {
         if(error) {
             return;
         }
+        let figures = $('.medium-insert-images figure');
+        let images = $('.medium-insert-images img');
+        let caption = $('.medium-insert-images figcaption');
+        for (let i = 0; i < figures.length; i++) {
+            figures[i].setAttribute("class", "article-img-div");
+            images[i].setAttribute("class", "article-img lazy");
+            images[i].setAttribute("data-src", images[i].getAttribute("src"))
+            let comPath = view.compressImgPath(images[i]);
+            images[i].setAttribute("src", comPath)
+            if(caption[i]) {
+                caption[i].setAttribute("class", "img-desc");
+            }
+        }
+        allContents = editor.serialize()['element-0'].value;
+        allContents = allContents.replace("<div><br></div>", "");
         let viewContent = allContents.match(/(?<=(<p>))(.*?)(?=(<\/p>))/g);
         let artImg = $('.medium-insert-images img')[0];
+        let status = $('.status').is(':checked');
         if(artImg && artImg.src) {
-            var articleImage = $('.medium-insert-images img')[0].src.replace(location.origin, '');
+            var articleImage = view.compressImgPath(artImg);
         }
         showSpinner();
         fetch('/api/save/article', {
@@ -64,12 +69,13 @@ let view = {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
+            body: JSON.stringify({ 
                 "title": title,
                 "content": allContents,
                 "viewContent": viewContent,
                 "readTime": readTime,
-                "articleImage": articleImage
+                "articleImage": articleImage,
+                "status": status
             }),
         }).then(() => {
             window.location.href = location.origin;
@@ -90,6 +96,12 @@ let view = {
             $(".time-error").addClass('show');
         }
         return error;
+    },
+    compressImgPath(artImg) {
+        var img = artImg.getAttribute('data-src');
+        img = img.replace(/^.*[\\\/]/, '');
+        img = img.substr(0, img.indexOf('.')) + "_small." + img.substr(img.indexOf('.') + 1)
+        return '/test/' + img.replace(location.origin, '');
     }
 }
 

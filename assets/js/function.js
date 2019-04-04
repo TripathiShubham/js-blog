@@ -57,33 +57,6 @@ function hasScrolled() {
   lastScrollTop = st;
 }
 
-function setIntersectionObserver() {
-  document.addEventListener("DOMContentLoaded", function () {
-    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
-    if ("IntersectionObserver" in window) {
-      let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            let lazyImage = entry.target;
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImageObserver.unobserve(lazyImage);
-            lazyImage.onload = function () {
-              lazyImage.classList.remove("lazy");
-            }
-          }
-        });
-      });
-
-      lazyImages.forEach(function (lazyImage) {
-        lazyImageObserver.observe(lazyImage);
-      });
-    } else {
-      // Possibly fall back to a more compatible method here
-    }
-  });
-}
-
 function setEventListners() {
   return {
     setClickEventById: function (id, callback) {
@@ -126,11 +99,10 @@ function initialize() {
   event.setClickEventById("menu", showSideNav);
   event.setClickEventById("body", hideSideNav);
   event.setClickEventById("userProfilePic", toogleUserMenu);
-  //setIntersectionObserver();
   $(window).scroll(function () {
     didScroll = true;
   });
-  setInterval(function () {
+  setInterval(function () { 
     if (didScroll && !spinner) {
       hasScrolled();
       didScroll = false;

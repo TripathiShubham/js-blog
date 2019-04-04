@@ -24,14 +24,16 @@ let model = {
 }
 
 let view = {
-    init: function () {
+    init: function () { 
         controller.getArticle()
         .then( (response) => {
             return response.json();
         }).then( (response) => {
             controller.setArticle(response);
-            mainImgSrc.setAttribute("src", response[0].articleImage);
-            mainImgSrc.setAttribute("class", "article-img");
+            let imgSrc = response[0].articleImage;
+            mainImgSrc.setAttribute('data-src', imgSrc.replace('_small',''));
+            mainImgSrc.setAttribute('src', imgSrc);
+            mainImgSrc.setAttribute("class", "article-img lazy");
             mainImgSrc.setAttribute("onclick", "view.viewArticle(0)");
             mainTitle.innerHTML = response[0].title;
             mainTitle.setAttribute("onclick", "view.viewArticle(0)");
@@ -40,8 +42,9 @@ let view = {
             mainTime.innerHTML = response[0].readTime + " min read";
             this.createArticles(response);
             hideSpinner();
+            view.setIntersectionObserver();
         });
-        authorImg[1].setAttribute("src", "/assets/img/IMG-20151025-WA0009.jpg")
+        authorImg[1].setAttribute("data-src", "/assets/img/IMG-20151025-WA0009.jpg")
     },
     createArticles: function(articlesList) {
         var doc = document.createDocumentFragment();
@@ -63,7 +66,9 @@ let view = {
             let flex1 = $('<div class="flex-1"></div')[0];
             let starSpan = $('<span><i class="material-icons">star_border</i></span>')[0];
             let articleImgDiv = $('<div class="article-img-div" onclick="view.viewArticle('+i+')"></div>')[0];
-            let articleImg = $('<img class="article-img">')[0];
+            let articleImg = $('<img class="article-img lazy">')[0];
+            let imgSrc = articlesList[i].articleImage;
+            articleImg.setAttribute('data-src', articlesList[i].articleImage.replace('_small',''));
             articleImg.setAttribute('src', articlesList[i].articleImage);
             flex1.appendChild(starSpan);
             flex4.appendChild(articleAuthor);
@@ -83,7 +88,31 @@ let view = {
     viewArticle: function(articleId) {
         let article = controller.getArticleByIndex(articleId);
         window.location.href = articleUrl + '?id=' + article._id;
-    }
+    },
+    setIntersectionObserver: function() {
+          var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+      
+          if ("IntersectionObserver" in window) {
+            let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  let lazyImage = entry.target;
+                  lazyImage.src = lazyImage.dataset.src;
+                  lazyImageObserver.unobserve(lazyImage);
+                  lazyImage.onload = function () {
+                    lazyImage.classList.remove("lazy");
+                  }
+                }
+              });
+            });
+      
+            lazyImages.forEach(function (lazyImage) {
+              lazyImageObserver.observe(lazyImage);
+            });
+          } else {
+            // Possibly fall back to a more compatible method here
+          }
+      }
 }
 
 let controller = {
