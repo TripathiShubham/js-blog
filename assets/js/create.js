@@ -57,7 +57,7 @@ let view = {
         }
         allContents = editor.serialize()['element-0'].value;
         allContents = allContents.replace("<div><br></div>", "");
-        let viewContent = allContents.match(/(?<=(<p>))(.*?)(?=(<\/p>))/g);
+        let viewContent = allContents.match(/(?<=(<p>))(.*?)(?=(<\/p>))/g)[0];
         let artImg = $('.medium-insert-images img')[0];
         let status = $('.status').is(':checked');
         if(artImg && artImg.src) {

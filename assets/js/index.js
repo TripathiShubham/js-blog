@@ -13,7 +13,7 @@ let model = {
     init: function () {
     },
     getArticle: function() {
-        return fetch('/api/get/allArticle')
+        return fetch('/api/get/mainArticle')
     },
     setArticle: function(articles) {
         this.articles = articles;
@@ -24,7 +24,7 @@ let model = {
 }
 
 let view = {
-    init: function () { 
+    init: function () {
         controller.getArticle()
         .then( (response) => {
             return response.json();
