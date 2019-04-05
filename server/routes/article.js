@@ -33,10 +33,19 @@ module.exports = {
             res.send(result);
         });
     },
-    getAllArticle: function(req, res) {
+    getMainArticle: function(req, res) {
         Article.find({ articleImage: { $ne: null } })
-        //.sort('-creation_date')
+        .sort('-creation_date')
         .limit(5)
+        .exec(function(err, result){
+            res.send(result);
+        })
+    },
+    getAllArticle: function(req, res) {
+        Article.find({})
+        .sort('-creation_date')
+        .limit(parseInt(req.query.offset))
+        .skip(parseInt(req.query.skip))
         .exec(function(err, result){
             res.send(result);
         })
