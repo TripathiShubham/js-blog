@@ -6,6 +6,7 @@ var Article = new Schema({
     authorId : String,
     authorName : String,
     status: Boolean,
+    authorImgUrl: String,
     content: String,
     readTime: Number,
     viewContent: String,

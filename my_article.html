@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My articles</title>
+
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#1d69a4">
+    <meta name="description" content="Code Connect, platform to share, connect and explore ideas and be connected">
+    <meta name="keywords" content="Shubham Tripathi, Shubham, Tripathi, angularjs, javascript,
+            oracle, netsuite, developer">
+    <meta name="author" content="Shubham Tripathi">
+    <meta name="reply-to" content="shubhamio.js@gmail.com">
+    <meta name="url" content="https://codeconnect.app">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
+    <meta property="og:title" content="Code Connect" />
+    <meta property="og:url" content="https://codeconnect.app" />
+    <meta property="og:description"
+        content="Code Connect, platform to share, connect and explore ideas and be connected">
+    <meta property="og:image" content="https://codeconnect.app/assets/img/favicon.png">
+    <meta property="og:image:width" content="556" />
+    <meta property="og:image:height" content="406" />
+    <meta property="og:type" content="article" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="assets/style/style.css" rel="stylesheet">
+    <link rel='stylesheet' media='screen and (max-width: 480px)' href='assets/style/480px-style.css' />
+    <link rel='stylesheet' media='screen and (min-width: 481px) and (max-width: 840px)'
+        href='assets/style/840px-style.css' />
+    <link rel='stylesheet' media='screen and (min-width: 841px)' href='assets/style/full-screen-style.css' />
+
+</head>
+
+<body>
+
+    <div id="menu">
+        <i class="material-icons margin-13">
+            menu
+        </i>
+        <span style="float:right">
+            <a href="/"><img class="logo" src="assets/img/logo.svg" alt="logo"></a>
+        </span>
+    </div>
+    <side-nav>
+        <div class="nav__list" id="nav-ul">
+            <div>
+                <img src="" data-src="" class="user-img">
+            </div>
+            <div class="user-details">
+                <div class="user-name"></div>
+            </div>
+            <ul>
+                <li class="nav__item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/articles">Articles</a>
+                </li>
+                <li class="nav__item logoutBtn">
+                    <a href="/my_article">My Articles</a>
+                </li>
+                <li class="header-nav-item loginBtn nav__item">
+                    <a href="/auth/login">Login</a>
+                </li>
+                <li class="nav__item logoutBtn">
+                    <a href="/logout">Logout</a>
+                </li>
+                <li class="nav__item about">
+                    <a href="">About</a>
+                </li>
+            </ul>
+        </div>
+    </side-nav>
+    <div id="body">
+        <div class="overlay">
+            <img src="assets/img/loader.svg">
+        </div>
+        <div class="side-nav-open">
+        </div>
+
+        <header>
+            <nav>
+                <ul class="flex margin-side-18">
+                    <li>
+                        <a href="/"><img class="logo" src="assets/img/logo.svg" alt="logo" href="/"></a>
+                    </li>
+                    <li class="header-nav-item uppercase margin-left-auto">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="header-nav-item uppercase">
+                        <a href="/articles">Articles</a>
+                    </li>
+                    <li class="header-nav-item uppercase profileBtn">
+                        <a href="/create">Post</a>
+                    </li>
+                    <li class="header-nav-item uppercase loginBtn">
+                        <a href="/auth/login">Login</a>
+                    </li>
+                    <li class="profileBtn" id="userProfilePic">
+                        <img class="profile_img" src="" alt="logo" href="/">
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="user_menu">
+            <ul>
+                <li class="nav__item logoutBtn">
+                    <a href="/my_article">My Articles</a>
+                </li>
+                <li class="nav__item logoutBtn">
+                    <a href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page-container">
+            <h1>My articles</h1>
+            <div class="flex padding-top-10">
+                <div class="padding-10 max-width-100">
+                    <div class="latest-article margin-bottom-15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script defer src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script defer src="assets/js/my_article.js"></script>
+<script defer src="assets/js/function.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137749759-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-137749759-1');
+</script>
+
+
+</html>

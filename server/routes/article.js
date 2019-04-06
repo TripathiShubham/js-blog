@@ -13,6 +13,7 @@ module.exports = {
             title: req.body.title,
             authorId : req.session.user.profile._id,
             authorName : req.session.user.profile.firstName,
+            authorImgUrl : req.session.user.profile.profilePic,
             status: req.body.status,
             content: req.body.content,
             viewContent: req.body.viewContent,
@@ -48,6 +49,18 @@ module.exports = {
         .skip(parseInt(req.query.skip))
         .exec(function(err, result){
             res.send(result);
+        })
+    },
+    getArticleById: function(req, res) {
+        Article.find({ authorId: req.session.user.profile._id})
+        .sort('-creation_date')
+        .exec(function(err, result){
+            res.send(result);
+        })
+    },
+    deleteArticleById: function(req, res) {
+        Article.findOneAndDelete({ _id: req.body.id }, function(err, result) {
+            res.send({"status": "OK"});
         })
     }
 }
