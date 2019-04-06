@@ -89,6 +89,7 @@ function getUser() {
           profileImgM.attr("src", user.profile.profilePic);
           userName.text(user.profile.name)
           logoutBtn.css("display", "block");
+          localStorage.setItem("user", JSON.stringify(user));
         });
       }
     })

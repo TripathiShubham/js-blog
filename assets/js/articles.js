@@ -35,6 +35,7 @@ let view = {
             this.createArticles(response);
             hideSpinner();
             view.setIntersectionObserver();
+            controller.setArticle(response);
         });
     },
     createArticles: function(articlesList) {
@@ -56,10 +57,6 @@ let view = {
             articleTime.innerHTML = articlesList[i].readTime + " min read";
             let flex1 = $('<div class="flex-1"></div')[0];
             let starSpan = $('<span><i class="material-icons">star_border</i></span>')[0];
-            let articleImgDiv = $('<div class="article-img-div" onclick="view.viewArticle('+i+')"></div>')[0];
-            let articleImg = $('<img class="article-img lazy">')[0];
-            articleImg.setAttribute('data-src', articlesList[i].articleImage.replace('_small',''));
-            articleImg.setAttribute('src', articlesList[i].articleImage);
             flex1.appendChild(starSpan);
             flex4.appendChild(articleAuthor);
             flex4.appendChild(articleTime);
@@ -68,9 +65,18 @@ let view = {
             articleDetails.appendChild(articleTitle);
             articleDetails.appendChild(articleContent);
             articleDetails.appendChild(flex);
-            articleImgDiv.appendChild(articleImg);
             containerDiv.appendChild(articleDetails);
+            let articleImgDiv = $('<div class="article-img-div" onclick="view.viewArticle('+i+')"></div>')[0];
+            if(articlesList[i].articleImage != undefined) {
+              let articleImg = $('<img class="article-img lazy">')[0];
+              articleImg.setAttribute('data-src', articlesList[i].articleImage.replace('_small',''));
+              articleImg.setAttribute('src', articlesList[i].articleImage);
+              articleImgDiv.appendChild(articleImg);
+            }
             containerDiv.appendChild(articleImgDiv);
+            if(articlesList[i].articleImage != undefined) {
+            }
+            
             doc.appendChild(containerDiv);
         }
         latestArticle.appendChild(doc);

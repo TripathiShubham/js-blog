@@ -141,7 +141,7 @@ nav {
 }
 
 .flex-4 {
-    flex: 4 4 0%;
+    flex: 4 4 0% !important;
 }
 
 .margin-13 {
@@ -551,4 +551,20 @@ li, a, .article-title, .article-img-div {
 .about {
     position: fixed;
     bottom: 0px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #8b8585;
+}
+
+.latest-article .container:last-child {
+    border-bottom: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.padding-5-15 {
+    padding: 5px 12px;
 }

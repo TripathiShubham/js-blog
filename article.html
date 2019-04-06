@@ -14,6 +14,14 @@
     <meta name="url" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
+    <meta property="og:title" content="Code Connect" />
+    <meta property="og:url" content="https://codeconnect.app" />
+    <meta property="og:description"
+        content="Code Connect, platform to share, connect and explore ideas and be connected">
+    <meta property="og:image" content="https://codeconnect.app/assets/img/favicon.png">
+    <meta property="og:image:width" content="556" />
+    <meta property="og:image:height" content="406" />
+    <meta property="og:type" content="article" />
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -49,6 +57,9 @@
                 </li>
                 <li class="nav__item">
                     <a href="/articles">Articles</a>
+                </li>
+                <li class="nav__item logoutBtn">
+                    <a href="/my_article">My Articles</a>
                 </li>
                 <li class="header-nav-item loginBtn nav__item">
                     <a href="/auth/login">Login</a>
@@ -93,6 +104,9 @@
         <div class="user_menu">
             <ul>
                 <li class="nav__item logoutBtn">
+                    <a href="/my_article">My Articles</a>
+                </li>
+                <li class="nav__item logoutBtn">
                     <a href="/logout">Logout</a>
                 </li>
             </ul>
@@ -101,6 +115,15 @@
         <div class="blog-container">
             <div>
                 <h1 class="blog-title"></h1>
+            </div>
+            <div class="flex margin-bottom-15">
+                <span class="author_img">
+                    <img class="profile_img" src="" alt="logo" href="/">
+                </span>
+                <span class="container padding-5-15">
+                    <span class="author_name"></span>
+                    <span class="article_date color-grey"></span>
+                </span>
             </div>
             <div class="blog-content">
             </div>

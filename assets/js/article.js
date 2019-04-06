@@ -1,5 +1,9 @@
 const articleTitle = $(".blog-title")[0];
 const articleContent = $(".blog-content")[0];
+const authorImg = $('.author_img img')[0];
+const authorName = $('.author_name')[0];
+const articleDate = $('.article_date')[0];
+const monthList = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 let model = {
     getArticleById: function (id) {
@@ -15,6 +19,10 @@ let view = {
             }).then((response) => {
                 articleTitle.innerHTML = document.title = response[0].title;
                 articleContent.innerHTML = response[0].content;
+                authorImg.setAttribute("src", response[0].authorImgUrl);
+                authorName.innerHTML = response[0].authorName;
+                let date = new Date(response[0].creation_date);
+                articleDate.innerHTML = date.getDate() + "  " + monthList[date.getMonth()] + ", " + date.getFullYear() + " - " + response[0].readTime + " min read"
                 hideSpinner();
                 view.setIntersectionObserver();
             });
