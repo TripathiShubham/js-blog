@@ -37,7 +37,6 @@ module.exports = {
     },
     getMainArticle: function(req, res) {
         Article.find({ articleImage: { $ne: null } })
-        .sort('-creation_date')
         .limit(5)
         .exec(function(err, result){
             res.send(result);
