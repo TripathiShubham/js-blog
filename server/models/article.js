@@ -11,6 +11,7 @@ var Article = new Schema({
     readTime: Number,
     viewContent: String,
     articleImage: String,
+    tags: [String],
     creation_date: {type: Date, default: Date.now},
 });
 mongoose.model('article', Article);

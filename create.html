@@ -16,8 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content="Code Connect" />
   <meta property="og:url" content="https://codeconnect.app" />
-  <meta property="og:description"
-      content="Code Connect, platform to share, connect and explore ideas and be connected">
+  <meta property="og:description" content="Code Connect, platform to share, connect and explore ideas and be connected">
   <meta property="og:image" content="https://codeconnect.app/assets/img/favicon.png">
   <meta property="og:image:width" content="556" />
   <meta property="og:image:height" content="406" />
@@ -111,16 +110,21 @@
 
     <div class="blog-container">
       <div id="article_title">
-        <h4 contenteditable="true" data-placeholder="Enter the Title"></h4>
+        <h4 class="editable_content" contenteditable="true" data-placeholder="Enter the Title"></h4>
       </div>
       <span class="title-error error">Title is required</span>
       <div class="editable">
       </div>
       <span class="content-error error">Content is required</span>
       <div id="article_time">
-        <p contenteditable="true" data-placeholder="Article read time"></p>
+        <p class="editable_content" contenteditable="true" data-placeholder="Article read time"></p>
       </div>
       <span class="time-error error">Time is required and should be a numeric value</span>
+      <div id="article_tag">
+        <p class="editable_content tags" contenteditable="true" data-placeholder="Enter tags related to the article"></p>
+        <div class="tagsList margin-13">
+        </div>
+      </div> 
       <input type="checkbox" name="status" class="status"> Publish this article<br>
       <button id="post" class="uppercase">Post</button>
     </div>

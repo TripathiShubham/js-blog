@@ -3,6 +3,7 @@ const articleContent = $(".blog-content")[0];
 const authorImg = $('.author_img img')[0];
 const authorName = $('.author_name')[0];
 const articleDate = $('.article_date')[0];
+const articleTag = $('.tagsList')[0];
 const monthList = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 let model = {
@@ -23,6 +24,12 @@ let view = {
                 authorName.innerHTML = response[0].authorName;
                 let date = new Date(response[0].creation_date);
                 articleDate.innerHTML = date.getDate() + "  " + monthList[date.getMonth()] + ", " + date.getFullYear() + " - " + response[0].readTime + " min read"
+                let tags = response[0].tags;
+                for(let i=0; i<tags.length; i++) {
+                  let tagSpan = $('<span class="tag_span"></span>')[0];
+                  tagSpan.innerText = tags[i];
+                  articleTag.appendChild(tagSpan);
+                }
                 hideSpinner();
                 view.setIntersectionObserver();
             });

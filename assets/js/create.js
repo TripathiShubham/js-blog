@@ -3,6 +3,8 @@ let placeholderText = "Type your text";
 let buttonsList = ['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'h3', 'quote'];
 let uploadURL = '/upload';
 let uploadParamName = 'image';
+const articleTag = $('.tagsList')[0];
+let tags = [];
 
 let view = {
     init: function () {
@@ -30,6 +32,15 @@ let view = {
         $('body').on('dragstart dragover dragenter dragleave drop', function (event) {
             event.preventDefault();
             return false;
+        });
+        $('body').on('keyup', '.tags', function(e) {
+            if(e.which == 13) {
+                let tag = e.target.innerText.replace(/(\r\n|\n|\r)/gm, "");
+                tags.push(tag);
+                view.addTag(tag);
+                $('.tags').text("");
+                e.preventDefault();
+            }
         });
         hideSpinner();
     },
@@ -75,7 +86,8 @@ let view = {
                 "viewContent": viewContent,
                 "readTime": readTime,
                 "articleImage": articleImage,
-                "status": status
+                "status": status,
+                "tags": tags
             }),
         }).then(() => {
             window.location.href = location.origin;
@@ -102,6 +114,11 @@ let view = {
         img = img.replace(/^.*[\\\/]/, '');
         img = img.substr(0, img.indexOf('.')) + "_small." + img.substr(img.indexOf('.') + 1)
         return '/test/' + img.replace(location.origin, '');
+    },
+    addTag: function(text) {
+        let tagSpan = $('<span class="tag_span"></span>')[0];
+        tagSpan.innerText = text;
+        articleTag.appendChild(tagSpan);
     }
 }
 

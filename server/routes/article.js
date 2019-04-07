@@ -18,7 +18,8 @@ module.exports = {
             content: req.body.content,
             viewContent: req.body.viewContent,
             readTime: req.body.readTime,
-            articleImage: req.body.articleImage
+            articleImage: req.body.articleImage,
+            tags: req.body.tags
         });
         article.save(function(err, result) {
             if(err) {
