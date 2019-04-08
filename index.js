@@ -104,6 +104,7 @@ app.get('/api/get/mainArticle', article.getMainArticle);
 app.post('/api/get/allArticle', article.getAllArticle);
 app.get('/api/get/articleById', article.getArticleById);
 app.delete('/api/delete/articleById', article.deleteArticleById);
+app.get('/api/search/article', article.searchArticle);
 
 app.get('/api/get/user', function (req, res) {
     res.send(req.session.user);
