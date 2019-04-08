@@ -26,13 +26,16 @@ let view = {
                 articleDate.innerHTML = date.getDate() + "  " + monthList[date.getMonth()] + ", " + date.getFullYear() + " - " + response[0].readTime + " min read"
                 let tags = response[0].tags;
                 for(let i=0; i<tags.length; i++) {
-                  let tagSpan = $('<span class="tag_span"></span>')[0];
+                  let tagSpan = $(`<span onclick="view.searchByTag('${tags[i]}')" class="tag_span pointer"></span>`)[0];
                   tagSpan.innerText = tags[i];
                   articleTag.appendChild(tagSpan);
                 }
                 hideSpinner();
                 view.setIntersectionObserver();
             });
+    },
+    searchByTag: function(search) {
+      window.location.href = location.origin + "/search?search=" + search;
     },
     setDisqus: function (id) {
         var disqus_config = function () {

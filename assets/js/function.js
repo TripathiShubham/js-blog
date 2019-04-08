@@ -95,6 +95,16 @@ function getUser() {
     })
 }
 
+function search(e) {
+  if(e.which == 13) {
+    window.location.href = location.origin + "/search?search=" + e.target.value;
+  }
+}
+
+function viewSearch() {
+  $('.srch_input').css('width', '100px');
+}
+
 function initialize() {
   var event = setEventListners();
   event.setClickEventById("menu", showSideNav);

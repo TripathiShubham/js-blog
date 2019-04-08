@@ -98,6 +98,10 @@ app.get("/create", function (req, res) {
     res.sendFile(__dirname + '/create.html');
 });
 
+app.get("/search", function (req, res) {
+    res.sendFile(__dirname + '/search.html');
+});
+
 app.post('/api/save/article', article.addArticle);
 app.get('/api/get/article', article.getArticle);
 app.get('/api/get/mainArticle', article.getMainArticle);

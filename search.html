@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>My articles</title>
+    <title>Search Result</title>
 
     <meta charset="UTF-8">
     <meta name="theme-color" content="#1d69a4">
@@ -58,11 +58,11 @@
                 <li class="nav__item">
                     <a href="/articles">Articles</a>
                 </li>
-                <li class="nav__item logoutBtn">
-                    <a href="/my_article">My Articles</a>
-                </li>
                 <li class="header-nav-item loginBtn nav__item">
                     <a href="/auth/login">Login</a>
+                </li>
+                <li class="nav__item logoutBtn">
+                    <a href="/my_article">My Articles</a>
                 </li>
                 <li class="nav__item logoutBtn">
                     <a href="/logout">Logout</a>
@@ -123,7 +123,7 @@
         </div>
 
         <div class="page-container">
-            <h1>My articles</h1>
+            <h3 class="search_for"></h3>
             <div class="flex padding-top-10">
                 <div class="padding-10 max-width-100">
                     <div class="latest-article margin-bottom-15">
@@ -135,7 +135,7 @@
 
 </body>
 <script defer src="/bower_components/jquery/dist/jquery.min.js"></script>
-<script defer src="assets/js/my_article.js"></script>
+<script defer src="assets/js/search.js"></script>
 <script defer src="assets/js/function.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

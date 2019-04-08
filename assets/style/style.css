@@ -580,3 +580,13 @@ li, a, .article-title, .article-img-div {
     font-style: normal;
     margin: 2px 4px;
 }
+
+.srch_input {
+    width: 0px;
+    padding: 0px;
+    border: 0px;
+    transition: width 0.5s;
+    border-bottom: 1px solid grey;
+    outline: none;
+    font-size: 20px;
+}
