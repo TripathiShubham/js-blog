@@ -4,7 +4,6 @@ mongoose = require('mongoose');
 var session = require('express-session');
 var db = require('./server/config/db');
 var article = require('./server/routes/article');
-var user = require('./server/routes/user');
 var multer = require('multer');
 var passport = require('passport');
 var jimp = require('jimp');
