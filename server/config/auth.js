@@ -22,7 +22,7 @@ module.exports = function(passport) {
 
         clientID        : '323592826137-dn19ht5043bm97qgo5b2hu50n3c75u2g.apps.googleusercontent.com',
         clientSecret    : 'Ygdv9RvwdtEpX2NKBLgUkA7m',
-        callbackURL     : 'http://localhost:3000/auth/google',
+        callbackURL     : 'https://codeconnect.app/auth/google',
 
     },
     function(token, refreshToken, profile, done) {
